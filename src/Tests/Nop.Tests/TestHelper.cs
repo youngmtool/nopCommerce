@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Nop.Core;
@@ -61,7 +61,16 @@ namespace Nop.Tests
         /// <summary>
         /// Get affiliate
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+       	/// Affiliate
+        /// {
+        /// 	Deleted = true,
+        /// 	Active = true,
+        /// 	Address = GetAddress(),
+        /// 	AdminComment = "AdminComment 1",
+        /// 	FriendlyUrlName = "FriendlyUrlName 1"
+        /// }
+        /// </returns>
         public static Affiliate GetAffiliate()
         {
             return new Affiliate
@@ -81,7 +90,13 @@ namespace Nop.Tests
         /// <summary>
         /// Get blog comment
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// BlogComment
+        /// {
+        ///     CreatedOnUtc = new DateTime(2010, 01, 03),
+        ///     Customer = GetCustomer()
+        /// }
+        /// </returns>
         public static BlogComment GetBlogComment()
         {
             return new BlogComment
@@ -94,7 +109,26 @@ namespace Nop.Tests
         /// <summary>
         /// Get blog post
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// BlogPost
+        /// {
+        ///     Title = "Title 1",
+        ///     Body = "Body 1",
+        ///     BodyOverview = "BodyOverview 1",
+        ///     AllowComments = true,
+        ///     CommentCount = 1,
+        ///     Tags = "Tags 1",
+        ///     StartDateUtc = new DateTime(2010, 01, 01),
+        ///     EndDateUtc = new DateTime(2010, 01, 02),
+        ///     CreatedOnUtc = new DateTime(2010, 01, 03),
+        ///     MetaTitle = "MetaTitle 1",
+        ///     MetaDescription = "MetaDescription 1",
+        ///     MetaKeywords = "MetaKeywords 1",
+        ///     LimitedToStores = true,
+        ///     Language = GetLanguage(),
+        ///     BlogComments.Add(GetBlogComment())
+        /// }
+        /// </returns>
         public static BlogPost GetBlogPost()
         {
             var blogPost = new BlogPost
@@ -147,7 +181,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get back in stock subscription
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// BackInStockSubscription
+        /// {
+        ///     Product = GetProduct(),
+        ///     Customer = GetCustomer(),
+        ///     CreatedOnUtc = new DateTime(2010, 01, 02)
+        /// }
+        /// </returns>
         public static BackInStockSubscription GetBackInStockSubscription()
         {
             return new BackInStockSubscription
@@ -161,7 +202,32 @@ namespace Nop.Tests
         /// <summary>
         /// Get category
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Category
+        /// {
+        ///     Name = "Books",
+        ///     Description = "Description 1",
+        ///     CategoryTemplateId = 1,
+        ///     MetaKeywords = "Meta keywords",
+        ///     MetaDescription = "Meta description",
+        ///     MetaTitle = "Meta title",
+        ///     ParentCategoryId = 2,
+        ///     PictureId = 3,
+        ///     PageSize = 4,
+        ///     AllowCustomersToSelectPageSize = true,
+        ///     PageSizeOptions = "4, 2, 8, 12",
+        ///     PriceRanges = "1-3;",
+        ///     ShowOnHomePage = false,
+        ///     IncludeInTopMenu = true,
+        ///     Published = true,
+        ///     SubjectToAcl = true,
+        ///     LimitedToStores = true,
+        ///     Deleted = false,
+        ///     DisplayOrder = 5,
+        ///     CreatedOnUtc = new DateTime(2010, 01, 01),
+        ///     UpdatedOnUtc = new DateTime(2010, 01, 02),
+        /// }
+        /// </returns>
         public static Category GetCategory()
         {
             return new Category
@@ -193,7 +259,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get category template
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// CategoryTemplate
+        /// {
+        ///     Name = "Name 1",
+        ///     ViewPath = "ViewPath 1",
+        ///     DisplayOrder = 1,
+        /// }
+        /// </returns>
         public static CategoryTemplate GetCategoryTemplate()
         {
             return new CategoryTemplate
@@ -207,7 +280,29 @@ namespace Nop.Tests
         /// <summary>
         /// Get manufacturer
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Manufacturer
+        /// {
+        ///     Name = "Name",
+        ///     Description = "Description 1",
+        ///     ManufacturerTemplateId = 1,
+        ///     MetaKeywords = "Meta keywords",
+        ///     MetaDescription = "Meta description",
+        ///     MetaTitle = "Meta title",
+        ///     PictureId = 3,
+        ///     PageSize = 4,
+        ///     AllowCustomersToSelectPageSize = true,
+        ///     PageSizeOptions = "4, 2, 8, 12",
+        ///     PriceRanges = "1-3;",
+        ///     Published = true,
+        ///     SubjectToAcl = true,
+        ///     LimitedToStores = true,
+        ///     Deleted = false,
+        ///     DisplayOrder = 5,
+        ///     CreatedOnUtc = new DateTime(2010, 01, 01),
+        ///     UpdatedOnUtc = new DateTime(2010, 01, 02),
+        /// }
+        /// </returns>
         public static Manufacturer GetManufacturer()
         {
             return new Manufacturer
@@ -236,7 +331,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get manufacturer template
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ManufacturerTemplate
+        /// {
+        ///     Name = "Name 1",
+        ///     ViewPath = "ViewPath 1",
+        ///     DisplayOrder = 1,
+        /// }
+        /// </returns>
         public static ManufacturerTemplate GetManufacturerTemplate()
         {
             return new ManufacturerTemplate
@@ -250,7 +352,18 @@ namespace Nop.Tests
         /// <summary>
         /// Get predefined product attribute value
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// PredefinedProductAttributeValue
+        /// {
+        ///     Name = "Name 1",
+        ///     PriceAdjustment = 1.1M,
+        ///     WeightAdjustment = 2.1M,
+        ///     Cost = 3.1M,
+        ///     IsPreSelected = true,
+        ///     DisplayOrder = 3,
+        ///     ProductAttribute = GetProductAttribute()
+        /// }
+        /// </returns>
         public static PredefinedProductAttributeValue GetPredefinedProductAttributeValue()
         {
             return new PredefinedProductAttributeValue
@@ -268,7 +381,120 @@ namespace Nop.Tests
         /// <summary>
         /// Get product
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Product
+        /// {
+        /// 	Id = 1,
+        /// 	Name = "Product name 1",
+        /// 	AvailableStartDateTimeUtc = new DateTime(2010, 01, 01),
+        /// 	RequiredProductIds = "1, 4,7 ,a,",
+        /// 	AvailableEndDateTimeUtc = new DateTime(2010, 01, 03),
+        /// 	CreatedOnUtc = new DateTime(2010, 01, 03),
+        /// 	UpdatedOnUtc = new DateTime(2010, 01, 04),
+        /// 	ProductType = ProductType.GroupedProduct,
+        /// 	ParentGroupedProductId = 2,
+        /// 	VisibleIndividually = true,
+        /// 	ProductAvailabilityRangeId = 1,
+        /// 	ManageInventoryMethod = ManageInventoryMethod.ManageStock,
+        /// 	ShortDescription = "ShortDescription 1",
+        /// 	FullDescription = "FullDescription 1",
+        /// 	AdminComment = "AdminComment 1",
+        /// 	VendorId = 1,
+        /// 	ProductTemplateId = 2,
+        /// 	ShowOnHomePage = false,
+        /// 	MetaKeywords = "Meta keywords",
+        /// 	MetaDescription = "Meta description",
+        /// 	MetaTitle = "Meta title",
+        /// 	AllowCustomerReviews = true,
+        /// 	ApprovedRatingSum = 2,
+        /// 	NotApprovedRatingSum = 3,
+        /// 	ApprovedTotalReviews = 4,
+        /// 	NotApprovedTotalReviews = 5,
+        /// 	SubjectToAcl = true,
+        /// 	LimitedToStores = true,
+        /// 	Sku = "sku 1",
+        /// 	ManufacturerPartNumber = "manufacturerPartNumber",
+        /// 	Gtin = "gtin 1",
+        /// 	IsGiftCard = true,
+        /// 	GiftCardTypeId = 1,
+        /// 	OverriddenGiftCardAmount = 1,
+        /// 	IsDownload = true,
+        /// 	DownloadId = 2,
+        /// 	UnlimitedDownloads = true,
+        /// 	MaxNumberOfDownloads = 3,
+        /// 	DownloadExpirationDays = 4,
+        /// 	DownloadActivationTypeId = 5,
+        /// 	HasSampleDownload = true,
+        /// 	SampleDownloadId = 6,
+        /// 	HasUserAgreement = true,
+        /// 	UserAgreementText = "userAgreementText",
+        /// 	IsRecurring = true,
+        /// 	RecurringCycleLength = 7,
+        /// 	RecurringCyclePeriodId = 8,
+        /// 	RecurringTotalCycles = 9,
+        /// 	IsRental = true,
+        /// 	RentalPriceLength = 9,
+        /// 	RentalPricePeriodId = 0,
+        /// 	RentalPricePeriod = 0,
+        /// 	IsShipEnabled = true,
+        /// 	IsFreeShipping = true,
+        /// 	ShipSeparately = true,
+        /// 	AdditionalShippingCharge = 10.1M,
+        /// 	DeliveryDateId = 5,
+        /// 	IsTaxExempt = true,
+        /// 	TaxCategoryId = 11,
+        /// 	IsTelecommunicationsOrBroadcastingOrElectronicServices = true,
+        /// 	ManageInventoryMethodId = 1,
+        /// 	UseMultipleWarehouses = true,
+        /// 	WarehouseId = 6,
+        /// 	StockQuantity = 13,
+        /// 	DisplayStockAvailability = true,
+        /// 	DisplayStockQuantity = true,
+        /// 	MinStockQuantity = 14,
+        /// 	LowStockActivityId = 15,
+        /// 	NotifyAdminForQuantityBelow = 16,
+        /// 	BackorderModeId = 17,
+        /// 	AllowBackInStockSubscriptions = true,
+        /// 	OrderMinimumQuantity = 18,
+        /// 	OrderMaximumQuantity = 19,
+        /// 	AllowedQuantities = "1, 5,4,10,sdf",
+        /// 	AllowAddingOnlyExistingAttributeCombinations = true,
+        /// 	NotReturnable = true,
+        /// 	DisableBuyButton = true,
+        /// 	DisableWishlistButton = true,
+        /// 	AvailableForPreOrder = true,
+        /// 	PreOrderAvailabilityStartDateTimeUtc = new DateTime(2010, 01, 01),
+        /// 	CallForPrice = true,
+        /// 	Price = 21.1M,
+        /// 	OldPrice = 22.1M,
+        /// 	ProductCost = 23.1M,
+        /// 	SpecialPrice = 32.1M,
+        /// 	SpecialPriceStartDateTimeUtc = new DateTime(2010, 01, 05),
+        /// 	SpecialPriceEndDateTimeUtc = new DateTime(2010, 01, 06),
+        /// 	CustomerEntersPrice = true,
+        /// 	MinimumCustomerEnteredPrice = 24.1M,
+        /// 	MaximumCustomerEnteredPrice = 25.1M,
+        /// 	BasepriceEnabled = true,
+        /// 	BasepriceAmount = 33.1M,
+        /// 	BasepriceUnitId = 4,
+        /// 	BasepriceBaseAmount = 34.1M,
+        /// 	BasepriceBaseUnitId = 5,
+        /// 	MarkAsNew = true,
+        /// 	MarkAsNewStartDateTimeUtc = new DateTime(2010, 01, 07),
+        /// 	MarkAsNewEndDateTimeUtc = new DateTime(2010, 01, 08),
+        /// 	HasTierPrices = true,
+        /// 	HasDiscountsApplied = true,
+        /// 	Weight = 26.1M,
+        /// 	Length = 27.1M,
+        /// 	Width = 28.1M,
+        /// 	Height = 29.1M,
+        /// 	RequireOtherProducts = true,
+        /// 	AutomaticallyAddRequiredProducts = true,
+        /// 	DisplayOrder = 30,
+        /// 	Published = true,
+        /// 	Deleted = false
+        /// }
+        /// </returns>
         public static Product GetProduct()
         {
             return new Product
@@ -388,7 +614,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get product attribute
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ProductAttribute
+        /// {
+        ///     Id = 1,
+        ///     Name = "Name 1",
+        ///     Description = "Description 1"
+        /// }
+        /// </returns>
         public static ProductAttribute GetProductAttribute()
         {
             return new ProductAttribute
@@ -402,7 +635,20 @@ namespace Nop.Tests
         /// <summary>
         /// Get product attribute combination
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ProductAttributeCombination
+        /// {
+        /// 	AttributesXml = "Some XML",
+        /// 	StockQuantity = 2,
+        /// 	AllowOutOfStockOrders = true,
+        /// 	Sku = "Sku1",
+        /// 	ManufacturerPartNumber = "ManufacturerPartNumber1",
+        /// 	Gtin = "Gtin1",
+        /// 	OverriddenPrice = 0.01M,
+        /// 	NotifyAdminForQuantityBelow = 3,
+        /// 	Product = GetProduct()
+        /// }
+        /// </returns>
         public static ProductAttributeCombination GetProductAttributeCombination()
         {
             return new ProductAttributeCombination
@@ -422,7 +668,26 @@ namespace Nop.Tests
         /// <summary>
         /// Get product attribute mapping
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ProductAttributeMapping
+        /// {
+        /// 	Id = 1,
+        /// 	TextPrompt = "TextPrompt 1",
+        /// 	IsRequired = true,
+        /// 	AttributeControlType = AttributeControlType.DropdownList,
+        /// 	DisplayOrder = 1,
+        /// 	ValidationMinLength = 2,
+        /// 	ValidationMaxLength = 3,
+        /// 	ValidationFileAllowedExtensions = "ValidationFileAllowedExtensions 1",
+        /// 	ValidationFileMaximumSize = 4,
+        /// 	DefaultValue = "DefaultValue 1",
+        /// 	ConditionAttributeXml = "ConditionAttributeXml 1",
+        /// 	Product = GetProduct(),
+        /// 	ProductId = GetProduct().Id,
+        /// 	ProductAttribute = GetProductAttribute(),
+        /// 	ProductAttributeId = GetProductAttribute().Id
+        /// }
+        /// </returns>
         public static ProductAttributeMapping GetProductAttributeMapping()
         {
             var product = GetProduct();
@@ -451,7 +716,25 @@ namespace Nop.Tests
         /// <summary>
         /// Get product attribute value
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ProductAttributeValue
+        /// {
+        /// 	Id = 1,
+        /// 	AttributeValueType = AttributeValueType.AssociatedToProduct,
+        /// 	AssociatedProductId = 10,
+        /// 	Name = "Name 1",
+        /// 	ColorSquaresRgb = "12FF33",
+        /// 	ImageSquaresPictureId = 1,
+        /// 	PriceAdjustment = 1.1M,
+        /// 	WeightAdjustment = 2.1M,
+        /// 	Cost = 3.1M,
+        /// 	Quantity = 2,
+        /// 	IsPreSelected = true,
+        /// 	DisplayOrder = 3,
+        /// 	ProductAttributeMapping = GetProductAttributeMapping(),
+        /// 	ProductAttributeMappingId = GetProductAttributeMapping().Id
+        /// }
+        /// </returns>
         public static ProductAttributeValue GetProductAttributeValue()
         {
             var productAttributeMapping = GetProductAttributeMapping();
@@ -477,7 +760,15 @@ namespace Nop.Tests
         /// <summary>
         /// Get product category
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ProductCategory
+        /// {
+        /// 	IsFeaturedProduct = true,
+        /// 	DisplayOrder = 1,
+        /// 	Product = GetProduct(),
+        /// 	Category = GetCategory()
+        /// }
+        /// </returns>
         public static ProductCategory GetProductCategory()
         {
             return new ProductCategory
@@ -492,7 +783,15 @@ namespace Nop.Tests
         /// <summary>
         /// Get product manufacturer
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ProductManufacturer
+        /// {
+        ///     IsFeaturedProduct = true,
+        ///     DisplayOrder = 1,
+        ///     Product = GetProduct(),
+        ///     Manufacturer = GetManufacturer()
+        /// }
+        /// </returns>
         public static ProductManufacturer GetProductManufacturer()
         {
             return new ProductManufacturer
@@ -507,7 +806,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get product picture
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ProductPicture
+        /// {
+        /// 	DisplayOrder = 1,
+        /// 	Product = GetProduct(),
+        /// 	Picture = GetPicture()
+        /// }
+        /// </returns>
         public static ProductPicture GetProductPicture()
         {
             return new ProductPicture
@@ -521,7 +827,17 @@ namespace Nop.Tests
         /// <summary>
         /// Get product specification attribute
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ProductSpecificationAttribute
+        /// {
+        /// 	AttributeType = SpecificationAttributeType.Hyperlink,
+        /// 	AllowFiltering = true,
+        /// 	ShowOnProductPage = true,
+        /// 	DisplayOrder = 1,
+        /// 	Product = GetProduct(),
+        /// 	SpecificationAttributeOption = GetSpecificationAttributeOption()
+        /// }
+        /// </returns>
         public static ProductSpecificationAttribute GetProductSpecificationAttribute()
         {
             return new ProductSpecificationAttribute
@@ -538,7 +854,12 @@ namespace Nop.Tests
         /// <summary>
         /// Get product tag
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ProductTag
+        /// {
+        ///     Name = "Name 1"
+        /// }
+        /// </returns>
         public static ProductTag GetProductTag()
         {
             return new ProductTag
@@ -550,7 +871,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get product template
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ProductTemplate
+        /// {
+        /// 	Name = "Name 1",
+        /// 	ViewPath = "ViewPath 1",
+        /// 	DisplayOrder = 1,
+        /// }
+        /// </returns>
         public static ProductTemplate GetProductTemplate()
         {
             return new ProductTemplate
@@ -564,12 +892,22 @@ namespace Nop.Tests
         /// <summary>
         /// Get product warehouse inventory
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ProductWarehouseInventory
+        /// {
+        /// 	Product = GetProduct(),
+        /// 
+        /// 	StockQuantity = 3,
+        /// 	ReservedQuantity = 4,
+        /// 	Warehouse = GetWarehouse(),
+        /// 	WarehouseId = GetWarehouse().Id
+        /// }
+        /// </returns>
         public static ProductWarehouseInventory GetProductWarehouseInventory()
         {
             var warehouse = GetWarehouse();
 
-            var productWarehouseInventory = new ProductWarehouseInventory
+            return new ProductWarehouseInventory
             {
                 Product = GetProduct(),
 
@@ -578,14 +916,18 @@ namespace Nop.Tests
                 Warehouse = warehouse,
                 WarehouseId = warehouse.Id
             };
-
-            return productWarehouseInventory;
         }
 
         /// <summary>
         /// Get specification attribute
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// SpecificationAttribute
+        /// {
+        ///     Name = "SpecificationAttribute name 1",
+        ///     DisplayOrder = 2
+        /// }
+        /// </returns>
         public static SpecificationAttribute GetSpecificationAttribute()
         {
             return new SpecificationAttribute
@@ -598,36 +940,47 @@ namespace Nop.Tests
         /// <summary>
         /// Get specification attribute option
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// SpecificationAttributeOption
+        /// {
+        /// 	Name = "SpecificationAttributeOption name 1",
+        /// 	DisplayOrder = 1,
+        /// 	ColorSquaresRgb = "ColorSquaresRgb 2",
+        /// 	SpecificationAttribute = GetSpecificationAttribute()
+        /// }
+        /// </returns>
         public static SpecificationAttributeOption GetSpecificationAttributeOption()
         {
-            var specificationAttributeOption = new SpecificationAttributeOption
+            return new SpecificationAttributeOption
             {
                 Name = "SpecificationAttributeOption name 1",
                 DisplayOrder = 1,
                 ColorSquaresRgb = "ColorSquaresRgb 2",
                 SpecificationAttribute = GetSpecificationAttribute()
-
             };
-
-            return specificationAttributeOption;
         }
 
         /// <summary>
         /// Get tier price
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// TierPrice
+        /// {
+        /// 	Id = 1,
+        /// 	StoreId = 1,
+        /// 	Quantity = 1,
+        /// 	Price = 2.1M
+        /// }
+        /// </returns>
         public static TierPrice GetTierPrice()
         {
-            var tierPrice = new TierPrice
+            return new TierPrice
             {
                 Id = 1,
                 StoreId = 1,
                 Quantity = 1,
                 Price = 2.1M
             };
-            
-            return tierPrice;
         }
 
         #endregion
@@ -637,7 +990,27 @@ namespace Nop.Tests
         /// <summary>
         /// Get address
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Address
+        /// {
+        /// 	FirstName = "FirstName 1",
+        /// 	LastName = "LastName 1",
+        /// 	Email = "Email 1",
+        /// 	Company = "Company 1",
+        /// 	Country = GetCountry(),
+        /// 	CountryId = GetCountry().Id,
+        /// 	StateProvince = GetStateProvince(),
+        /// 	StateProvinceId = GetStateProvince().Id,
+        /// 	City = "City 1",
+        /// 	Address1 = "Address1",
+        /// 	Address2 = "Address2",
+        /// 	ZipPostalCode = "ZipPostalCode 1",
+        /// 	PhoneNumber = "PhoneNumber 1",
+        /// 	FaxNumber = "FaxNumber 1",
+        /// 	CreatedOnUtc = new DateTime(2010, 01, 01),
+        /// 	CustomAttributes = "CustomAttributes 1"
+        /// }
+        /// </returns>
         public static Address GetAddress()
         {
             var country = GetCountry();
@@ -668,41 +1041,62 @@ namespace Nop.Tests
         /// <summary>
         /// Get address attribute
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// AddressAttribute
+        /// {
+        /// 	Name = "Name 1",
+        /// 	IsRequired = true,
+        /// 	AttributeControlType = AttributeControlType.Datepicker,
+        /// 	DisplayOrder = 2
+        /// }
+        /// </returns>
         public static AddressAttribute GetAddressAttribute()
         {
-            var addressAttribute = new AddressAttribute
+            return new AddressAttribute
             {
                 Name = "Name 1",
                 IsRequired = true,
                 AttributeControlType = AttributeControlType.Datepicker,
                 DisplayOrder = 2
             };
-
-            return addressAttribute;
         }
 
         /// <summary>
         /// Get address attribute value
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// AddressAttributeValue
+        /// {
+        /// 	Name = "Name 2",
+        /// 	IsPreSelected = true,
+        /// 	DisplayOrder = 1,
+        /// 	AddressAttribute = GetAddressAttribute()
+        /// }
+        /// </returns>
         public static AddressAttributeValue GetAddressAttributeValue()
         {
-            var addess = new AddressAttributeValue
+            return new AddressAttributeValue
             {
                 Name = "Name 2",
                 IsPreSelected = true,
                 DisplayOrder = 1,
                 AddressAttribute = GetAddressAttribute()
             };
-            
-            return addess;
         }
 
         /// <summary>
         /// Get generic attribute
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// GenericAttribute
+        /// {
+        /// 	EntityId = 1,
+        /// 	Key = "Key 1",
+        /// 	KeyGroup = "Customer",
+        /// 	Value = "Value 1",
+        /// 	StoreId = 2
+        /// }
+        /// </returns>
         public static GenericAttribute GetGenericAttribute()
         {
             return new GenericAttribute
@@ -718,7 +1112,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get aearch term
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// SearchTerm
+        /// {
+        /// 	Keyword = "Keyword 1",
+        /// 	StoreId = 1,
+        /// 	Count = 2
+        /// }
+        /// </returns>
         public static SearchTerm GetSearchTerm()
         {
             return new SearchTerm
@@ -736,7 +1137,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get setting
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Setting
+        /// {
+        /// 	Name = "Setting1",
+        /// 	Value = "Value1",
+        /// 	StoreId = 1
+        /// }
+        /// </returns>
         public static Setting GetSetting()
         {
             return new Setting
@@ -755,7 +1163,32 @@ namespace Nop.Tests
         /// Get customer
         /// </summary>
         /// <param name="systemNames">Customer role's system names</param>
-        /// <returns></returns>
+        /// <returns>
+        /// Customer
+        /// {
+        /// 	CustomerGuid = Guid.NewGuid(),
+        /// 	CreatedOnUtc = new DateTime(2010, 01, 01),
+        /// 	LastActivityDateUtc = new DateTime(2010, 01, 02),
+        /// 	AdminComment = "some comment here",
+        /// 	Active = true,
+        /// 	Deleted = false,
+        /// 	Username = "a@b.com",
+        /// 	Password = "password",
+        /// 	PasswordFormat = PasswordFormat.Clear,
+        /// 	PasswordSalt = "",
+        /// 	Email = "a@b.com",
+        /// 	IsTaxExempt = true,
+        /// 	AffiliateId = 1,
+        /// 	VendorId = 2,
+        /// 	HasShoppingCartItems = true,
+        /// 	IsSystemAccount = true,
+        /// 	SystemName = "SystemName 1",
+        /// 	LastIpAddress = "192.168.1.1", 
+        /// 	LastLoginDateUtc = new DateTime(2010, 01, 02),
+        ///     ShoppingCartItems.Add(GetShoppingCartItem()),
+        ///     
+        /// }
+        /// </returns>
         public static Customer GetCustomer(params string[] systemNames)
         {
             var customer = new Customer
@@ -794,24 +1227,38 @@ namespace Nop.Tests
         /// <summary>
         /// Get customer attribute
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// CustomerAttribute
+        /// {
+        /// 	Name = "Name 1",
+        /// 	IsRequired = true,
+        /// 	AttributeControlType = AttributeControlType.Datepicker,
+        /// 	DisplayOrder = 2
+        /// }
+        /// </returns>
         public static CustomerAttribute GetCustomerAttribute()
         {
-            var customerAttribute = new CustomerAttribute
+            return new CustomerAttribute
             {
                 Name = "Name 1",
                 IsRequired = true,
                 AttributeControlType = AttributeControlType.Datepicker,
                 DisplayOrder = 2
             };
-
-            return customerAttribute;
         }
 
         /// <summary>
         /// Get customer attribute value
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// CustomerAttributeValue
+        /// {
+        /// 	Name = "Name 2",
+        /// 	IsPreSelected = true,
+        /// 	DisplayOrder = 1,
+        /// 	CustomerAttribute = GetCustomerAttribute()
+        /// }
+        /// </returns>
         public static CustomerAttributeValue GetCustomerAttributeValue()
         {
             var customerAttributeValue = new CustomerAttributeValue
@@ -831,7 +1278,18 @@ namespace Nop.Tests
         /// Get customer role
         /// </summary>
         /// <param name="systemName">System name</param>
-        /// <returns></returns>
+        /// <returns>
+        /// CustomerRole
+        /// {
+        /// 	Active = true,
+        /// 	Name = systemName.Replace(" system", string.Empty),
+        /// 	SystemName = systemName,
+        /// 	FreeShipping = true,
+        /// 	TaxExempt = true,
+        /// 	IsSystemRole = true,
+        /// 	PurchasedWithProductId = 1
+        /// }
+        /// </returns>
         public static CustomerRole GetCustomerRole(string systemName)
         {
             return new CustomerRole
@@ -849,7 +1307,17 @@ namespace Nop.Tests
         /// <summary>
         /// Get external authentication record
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ExternalAuthenticationRecord
+        /// {
+        /// 	ExternalIdentifier = "ExternalIdentifier 1",
+        /// 	ExternalDisplayIdentifier = "ExternalDisplayIdentifier 1",
+        /// 	OAuthToken = "OAuthToken 1",
+        /// 	OAuthAccessToken = "OAuthAccessToken 1",
+        /// 	ProviderSystemName = "ProviderSystemName 1",
+        /// 	Email = "Email 1"
+        /// }
+        /// </returns>
         public static ExternalAuthenticationRecord GetExternalAuthenticationRecord()
         {
             return new ExternalAuthenticationRecord
@@ -866,7 +1334,18 @@ namespace Nop.Tests
         /// <summary>
         /// Get reward points history
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// RewardPointsHistory
+        /// {
+        /// 	Customer = GetCustomer(),
+        /// 	StoreId = 1,
+        /// 	Points = 2,
+        /// 	Message = "Points for registration",
+        /// 	PointsBalance = 3,
+        /// 	UsedAmount = 3.1M,
+        /// 	CreatedOnUtc = new DateTime(2010, 01, 01)
+        /// }
+        /// </returns>
         public static RewardPointsHistory GetRewardPointsHistory()
         {
             return new RewardPointsHistory
@@ -888,7 +1367,22 @@ namespace Nop.Tests
         /// <summary>
         /// Get country
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Country
+        /// {
+        /// 	Id = _id++,
+        /// 	Name = "United States",
+        /// 	AllowsBilling = true,
+        /// 	AllowsShipping = true,
+        /// 	TwoLetterIsoCode = "US",
+        /// 	ThreeLetterIsoCode = "USA",
+        /// 	NumericIsoCode = 1,
+        /// 	SubjectToVat = true,
+        /// 	Published = true,
+        /// 	DisplayOrder = 1,
+        /// 	LimitedToStores = true
+        /// }
+        /// </returns>
         public static Country GetCountry()
         {
             return new Country
@@ -910,7 +1404,22 @@ namespace Nop.Tests
         /// <summary>
         /// Get currency
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Currency
+        /// {
+        /// 	Id = 1,
+        /// 	Name = "US Dollar",
+        /// 	CurrencyCode = "USD",
+        /// 	Rate = 1.1M,
+        /// 	DisplayLocale = "en-US",
+        /// 	CustomFormatting = "",
+        /// 	LimitedToStores = true,
+        /// 	Published = true,
+        /// 	DisplayOrder = 2,
+        /// 	CreatedOnUtc = new DateTime(2010, 01, 01),
+        /// 	UpdatedOnUtc = new DateTime(2010, 01, 02)
+        /// }
+        /// </returns>
         public static Currency GetCurrency()
         {
             return new Currency
@@ -932,7 +1441,15 @@ namespace Nop.Tests
         /// <summary>
         /// Get measure dimension
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// MeasureDimension
+        /// {
+        /// 	Name = "inch(es)",
+        /// 	SystemKeyword = "inches",
+        /// 	Ratio = 1.12345678M,
+        /// 	DisplayOrder = 2
+        /// }
+        /// </returns>
         public static MeasureDimension GetMeasureDimension()
         {
             return new MeasureDimension
@@ -968,7 +1485,15 @@ namespace Nop.Tests
         /// <summary>
         /// Get measure weight
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// MeasureWeight
+        /// {
+        /// 	Name = "ounce(s)",
+        /// 	SystemKeyword = "ounce",
+        /// 	Ratio = 1.12345678M,
+        /// 	DisplayOrder = 2,
+        /// }
+        /// </returns>
         public static MeasureWeight GetMeasureWeight()
         {
             return new MeasureWeight
@@ -1004,10 +1529,19 @@ namespace Nop.Tests
         /// <summary>
         /// Get state province
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// StateProvince
+        /// {
+        /// 	Id = 0,
+        /// 	Name = "Louisiana",
+        /// 	Abbreviation = "LA",
+        /// 	DisplayOrder = 1,
+        /// 	Published = true
+        /// }
+        /// </returns>
         public static StateProvince GetStateProvince()
         {
-            var stateProvince = new StateProvince
+            return new StateProvince
             {
                 Id = 0,
                 Name = "Louisiana",
@@ -1015,8 +1549,6 @@ namespace Nop.Tests
                 DisplayOrder = 1,
                 Published = true
             };
-
-            return stateProvince;
         }
 
         #endregion
@@ -1026,7 +1558,26 @@ namespace Nop.Tests
         /// <summary>
         /// Get discount
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Discount
+        /// {
+        /// 	DiscountType = DiscountType.AssignedToCategories,
+        /// 	Name = "Discount 1",
+        /// 	UsePercentage = true,
+        /// 	DiscountPercentage = 1.1M,
+        /// 	DiscountAmount = 2.1M,
+        /// 	MaximumDiscountAmount = 208.1M,
+        /// 	StartDateUtc = new DateTime(2010, 01, 01),
+        /// 	EndDateUtc = new DateTime(2010, 01, 02),
+        /// 	RequiresCouponCode = true,
+        /// 	CouponCode = "SecretCode",
+        /// 	IsCumulative = true,
+        /// 	DiscountLimitation = DiscountLimitationType.Unlimited,
+        /// 	LimitationTimes = 3,
+        /// 	MaximumDiscountedQuantity = 4,
+        /// 	AppliedToSubCategories = true
+        /// }
+        /// </returns>
         public static Discount GetDiscount()
         {
             return new Discount
@@ -1052,7 +1603,12 @@ namespace Nop.Tests
         /// <summary>
         /// Get discount requirement
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// DiscountRequirement
+        /// {
+        ///     DiscountRequirementRuleSystemName = "BillingCountryIs"
+        /// }
+        /// </returns>
         public static DiscountRequirement GetDiscountRequirement()
         {
             return new DiscountRequirement
@@ -1064,7 +1620,13 @@ namespace Nop.Tests
         /// <summary>
         /// Get discount usage history
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// DiscountUsageHistory
+        /// {
+        /// 	Discount = GetDiscount(),
+        /// 	CreatedOnUtc = new DateTime(2010, 01, 01)
+        /// }
+        /// </returns>
         public static DiscountUsageHistory GetDiscountUsageHistory()
         {
             return new DiscountUsageHistory
@@ -1081,10 +1643,21 @@ namespace Nop.Tests
         /// <summary>
         /// Get forum
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Forum
+		/// {
+		/// 	Name = "Forum 1",
+		/// 	Description = "Forum 1 Description",
+		/// 	DisplayOrder = 10,
+		/// 	CreatedOnUtc = new DateTime(2010, 01, 01),
+		/// 	UpdatedOnUtc = new DateTime(2010, 01, 02),
+		/// 	NumPosts = 25,
+		/// 	NumTopics = 15
+		/// }
+        /// </returns>
         public static Forum GetForum()
         {
-            var forum = new Forum
+            return new Forum
             {
                 Name = "Forum 1",
                 Description = "Forum 1 Description",
@@ -1094,14 +1667,20 @@ namespace Nop.Tests
                 NumPosts = 25,
                 NumTopics = 15
             };
-
-            return forum;
         }
 
         /// <summary>
         /// Get forum group
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ForumGroup
+		/// {
+		///     Name = "Forum Group 1",
+		///     DisplayOrder = 1,
+		///     CreatedOnUtc = new DateTime(2010, 01, 01),
+		///     UpdatedOnUtc = new DateTime(2010, 01, 02),
+		/// }
+        /// </returns>
         public static ForumGroup GetForumGroup()
         {
             return new ForumGroup
@@ -1116,42 +1695,62 @@ namespace Nop.Tests
         /// <summary>
         /// Get forum post
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ForumPost
+		/// {
+		///     Text = "Forum Post 1 Text",
+		///     IPAddress = "127.0.0.1",
+		///     CreatedOnUtc = new DateTime(2010, 01, 01),
+		///     UpdatedOnUtc = new DateTime(2010, 01, 02),
+		/// }
+        /// </returns>
         public static ForumPost GetForumPost()
         {
-            var forumPost = new ForumPost
+            return new ForumPost
             {
                 Text = "Forum Post 1 Text",
                 IPAddress = "127.0.0.1",
                 CreatedOnUtc = new DateTime(2010, 01, 01),
                 UpdatedOnUtc = new DateTime(2010, 01, 02),
             };
-            
-            return forumPost;
         }
 
         /// <summary>
         /// Get forum subscription
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ForumSubscription
+		/// {
+		///     CreatedOnUtc = DateTime.UtcNow,
+		///     SubscriptionGuid = new Guid("11111111-2222-3333-4444-555555555555")
+		/// }
+        /// </returns>
         public static ForumSubscription GetForumSubscription()
         {
-            var forumSubscription = new ForumSubscription
+            return new ForumSubscription
             {
                 CreatedOnUtc = DateTime.UtcNow,
                 SubscriptionGuid = new Guid("11111111-2222-3333-4444-555555555555")
             };
-            
-            return forumSubscription;
         }
 
         /// <summary>
         /// Get forum topic
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ForumTopic
+		/// {
+		///     Subject = "Forum Topic 1",
+		///     TopicTypeId = (int) ForumTopicType.Sticky,
+		///     Views = 123,
+		///     CreatedOnUtc = new DateTime(2010, 01, 01),
+		///     UpdatedOnUtc = new DateTime(2010, 01, 02),
+		///     NumPosts = 100
+		/// }
+        /// </returns>
         public static ForumTopic GetForumTopic()
         {
-            var forumTopic = new ForumTopic
+            return new ForumTopic
             {
                 Subject = "Forum Topic 1",
                 TopicTypeId = (int) ForumTopicType.Sticky,
@@ -1160,17 +1759,25 @@ namespace Nop.Tests
                 UpdatedOnUtc = new DateTime(2010, 01, 02),
                 NumPosts = 100
             };
-            
-            return forumTopic;
         }
 
         /// <summary>
         /// Get private message
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// PrivateMessage
+		/// {
+		///     Subject = "Private Message 1 Subject",
+		///     Text = "Private Message 1 Text",
+		///     IsDeletedByAuthor = false,
+		///     IsDeletedByRecipient = false,
+		///     IsRead = false,
+		///     CreatedOnUtc = DateTime.UtcNow
+		/// }
+        /// </returns>
         public static PrivateMessage GetPrivateMessage()
         {
-            var privateMessage = new PrivateMessage
+            return new PrivateMessage
             {
                 Subject = "Private Message 1 Subject",
                 Text = "Private Message 1 Text",
@@ -1179,8 +1786,6 @@ namespace Nop.Tests
                 IsRead = false,
                 CreatedOnUtc = DateTime.UtcNow
             };
-            
-            return privateMessage;
         }
 
         #endregion
@@ -1190,7 +1795,20 @@ namespace Nop.Tests
         /// <summary>
         /// Get language
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Language
+		/// {
+		///     Name = "English",
+		///     LanguageCulture = "en-Us",
+		///     UniqueSeoCode = "en",
+		///     FlagImageFileName = "us.png",
+		///     Rtl = true,
+		///     DefaultCurrencyId = 1,
+		///     Published = true,
+		///     LimitedToStores = true,
+		///     DisplayOrder = 1
+		/// }
+        /// </returns>
         public static Language GetLanguage()
         {
             return new Language
@@ -1210,7 +1828,13 @@ namespace Nop.Tests
         /// <summary>
         /// Get locale string resource
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// LocaleStringResource
+		/// {
+		///     ResourceName = "ResourceName1",
+		///     ResourceValue = "ResourceValue2"
+		/// }
+        /// </returns>
         public static LocaleStringResource GetLocaleStringResource()
         {
             return new LocaleStringResource
@@ -1223,7 +1847,15 @@ namespace Nop.Tests
         /// <summary>
         /// Get localized property
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// LocalizedProperty
+		/// {
+		///     EntityId = 1,
+		///     LocaleKeyGroup = "LocaleKeyGroup 1",
+		///     LocaleKey = "LocaleKey 1",
+		///     LocaleValue = "LocaleValue 1"
+		/// }
+        /// </returns>
         public static LocalizedProperty GetLocalizedProperty()
         {
             return new LocalizedProperty
@@ -1242,7 +1874,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get activity log
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ActivityLog
+		/// {
+		///     Id = 1,
+		///     ActivityLogType = GetActivityLogType(),
+		///     Customer = GetCustomer()
+		/// }
+        /// </returns>
         public static ActivityLog GetActivityLog()
         {
             return new ActivityLog
@@ -1256,7 +1895,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get activity log type
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ActivityLogType
+		/// {
+		///     SystemKeyword = "SystemKeyword 1",
+		///     Name = "Name 1",
+		///     Enabled = true
+		/// }
+        /// </returns>
         public static ActivityLogType GetActivityLogType()
         {
             return new ActivityLogType
@@ -1270,7 +1916,18 @@ namespace Nop.Tests
         /// <summary>
         /// Get log
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Log
+		/// {
+		///     LogLevel = LogLevel.Error,
+		///     ShortMessage = "ShortMessage1",
+		///     FullMessage = "FullMessage1",
+		///     IpAddress = "127.0.0.1",
+		///     PageUrl = "http://www.someUrl1.com",
+		///     ReferrerUrl = "http://www.someUrl2.com",
+		///     CreatedOnUtc = new DateTime(2010, 01, 01)
+		/// }
+        /// </returns>
         public static Log GetLog()
         {
             return new Log
@@ -1292,7 +1949,19 @@ namespace Nop.Tests
         /// <summary>
         /// Get download
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Download
+		/// {
+		///     DownloadGuid = Guid.NewGuid(),
+		///     UseDownloadUrl = true,
+		///     DownloadUrl = "http://www.someUrl.com/file.zip",
+		///     DownloadBinary = new byte[] { 1, 2, 3 },
+		///     ContentType = MimeTypes.ApplicationXZipCo,
+		///     Filename = "file",
+		///     Extension = ".zip",
+		///     IsNew = true
+		/// }
+        /// </returns>
         public static Download GetDownload()
         {
             return new Download
@@ -1311,7 +1980,17 @@ namespace Nop.Tests
         /// <summary>
         /// Get picture
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Picture
+		/// {
+		///     PictureBinary = new byte[] { 1, 2, 3 },
+		///     MimeType = MimeTypes.ImagePJpeg,
+		///     IsNew = true,
+		///     SeoFilename = "seo filename 1",
+		///     AltAttribute = "AltAttribute 1",
+		///     TitleAttribute = "TitleAttribute 1"
+		/// }
+        /// </returns>
         public static Picture GetPicture()
         {
             return new Picture
@@ -1332,7 +2011,18 @@ namespace Nop.Tests
         /// <summary>
         /// Get campaign
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Campaign
+		/// {
+		///     Name = "Name 1",
+		///     Subject = "Subject 1",
+		///     Body = "Body 1",
+		///     CreatedOnUtc = new DateTime(2010, 01, 02),
+		///     DontSendBeforeDateUtc = new DateTime(2016, 2, 23),
+		///     CustomerRoleId = 1,
+		///     StoreId = 1
+		/// }
+        /// </returns>
         public static Campaign GetCampaign()
         {
             return new Campaign
@@ -1350,7 +2040,19 @@ namespace Nop.Tests
         /// <summary>
         /// Get email account
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// EmailAccount
+		/// {
+		///     Email = "admin@yourstore.com",
+		///     DisplayName = "Administrator",
+		///     Host = "127.0.0.1",
+		///     Port = 125,
+		///     Username = "John",
+		///     Password = "111",
+		///     EnableSsl = true,
+		///     UseDefaultCredentials = true
+		/// }
+        /// </returns>
         public static EmailAccount GetEmailAccount()
         {
             return new EmailAccount
@@ -1369,7 +2071,21 @@ namespace Nop.Tests
         /// <summary>
         /// Get message template
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// MessageTemplate
+		/// {
+		///     Name = "Template1",
+		///     BccEmailAddresses = "Bcc",
+		///     Subject = "Subj",
+		///     Body = "Some text",
+		///     IsActive = true,
+		///     AttachedDownloadId = 3,
+		///     EmailAccountId = 1,
+		///     LimitedToStores = true,
+		///     DelayBeforeSend = 2,
+		///     DelayPeriodId = 0
+		/// }
+        /// </returns>
         public static MessageTemplate GetMessageTemplate()
         {
             return new MessageTemplate
@@ -1390,7 +2106,16 @@ namespace Nop.Tests
         /// <summary>
         /// Get news letter subscription
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// NewsLetterSubscription
+		/// {
+		///     Email = "me@yourstore.com",
+		///     NewsLetterSubscriptionGuid = Guid.NewGuid(),
+		///     CreatedOnUtc = new DateTime(2010, 01, 01),
+		///     StoreId = 1,
+		///     Active = true
+		/// }
+        /// </returns>
         public static NewsLetterSubscription GetNewsLetterSubscription()
         {
             return new NewsLetterSubscription
@@ -1406,7 +2131,29 @@ namespace Nop.Tests
         /// <summary>
         /// Get queued email
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// QueuedEmail
+		/// {
+		///     PriorityId = 5,
+		///     From = "From",
+		///     FromName = "FromName",
+		///     To = "To",
+		///     ToName = "ToName",
+		///     ReplyTo = "ReplyTo",
+		///     ReplyToName = "ReplyToName",
+		///     CC = "CC",
+		///     Bcc = "Bcc",
+		///     Subject = "Subject",
+		///     Body = "Body",
+		///     AttachmentFilePath = "some file path",
+		///     AttachmentFileName = "some file name",
+		///     AttachedDownloadId = 3,
+		///     CreatedOnUtc = new DateTime(2010, 01, 01),
+		///     SentTries = 5,
+		///     SentOnUtc = new DateTime(2010, 02, 02),
+		///     DontSendBeforeDateUtc = new DateTime(2016, 2, 23)
+		/// }
+        /// </returns>
         public static QueuedEmail GetQueuedEmail()
         {
             return new QueuedEmail
@@ -1439,7 +2186,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get news comment
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// NewsComment
+		/// {
+		///     CommentText = "Comment text 1",
+		///     CreatedOnUtc = new DateTime(2010, 01, 03),
+		///     Customer = GetCustomer()
+		/// }
+        /// </returns>
         public static NewsComment GetNewsComment()
         {
             return new NewsComment
@@ -1453,7 +2207,25 @@ namespace Nop.Tests
         /// <summary>
         /// Get news item
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// NewsItem
+		/// {
+		///     Title = "Title 1",
+		///     Short = "Short 1",
+		///     Full = "Full 1",
+		///     Published = true,
+		///     StartDateUtc = new DateTime(2010, 01, 01),
+		///     EndDateUtc = new DateTime(2010, 01, 02),
+		///     AllowComments = true,
+		///     CommentCount = 1,
+		///     LimitedToStores = true,
+		///     CreatedOnUtc = new DateTime(2010, 01, 03),
+		///     MetaTitle = "MetaTitle 1",
+		///     MetaDescription = "MetaDescription 1",
+		///     MetaKeywords = "MetaKeywords 1",
+		///     Language = GetLanguage()
+		/// }
+        /// </returns>
         public static NewsItem GetNewsItem()
         {
             return new NewsItem
@@ -1482,7 +2254,27 @@ namespace Nop.Tests
         /// <summary>
         /// Get checkout attribute
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// CheckoutAttribute
+		/// {
+		///     Id = 1,
+		///     Name = "Name 1",
+		///     TextPrompt = "TextPrompt 1",
+		///     IsRequired = true,
+		///     ShippableProductRequired = true,
+		///     IsTaxExempt = true,
+		///     TaxCategoryId = 1,
+		///     AttributeControlType = AttributeControlType.Datepicker,
+		///     DisplayOrder = 2,
+		///     LimitedToStores = true,
+		///     ValidationMinLength = 3,
+		///     ValidationMaxLength = 4,
+		///     ValidationFileAllowedExtensions = "ValidationFileAllowedExtensions 1",
+		///     ValidationFileMaximumSize = 5,
+		///     DefaultValue = "DefaultValue 1",
+		///     ConditionAttributeXml = "ConditionAttributeXml 1"
+		/// }
+        /// </returns>
         public static CheckoutAttribute GetCheckoutAttribute()
         {
             return new CheckoutAttribute
@@ -1509,10 +2301,21 @@ namespace Nop.Tests
         /// <summary>
         /// Get checkout attribute value
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// CheckoutAttributeValue
+		/// {
+		///     Id = 1,
+		///     Name = "Name 2",
+		///     PriceAdjustment = 1,
+		///     WeightAdjustment = 2,
+		///     IsPreSelected = true,
+		///     DisplayOrder = 3,
+		///     ColorSquaresRgb = "#112233"
+		/// }
+        /// </returns>
         public static CheckoutAttributeValue GetCheckoutAttributeValue()
         {
-            return  new CheckoutAttributeValue
+            return new CheckoutAttributeValue
             {
                 Id = 1,
                 Name = "Name 2",
@@ -1527,10 +2330,25 @@ namespace Nop.Tests
         /// <summary>
         /// Get gift card
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// GiftCard
+		/// {
+		///     Amount = 100,
+		///     GiftCardType = GiftCardType.Physical,
+		///     GiftCardCouponCode = "Secret",
+		///     RecipientName = "RecipientName 1",
+		///     RecipientEmail = "a@b.c",
+		///     SenderName = "SenderName 1",
+		///     SenderEmail = "d@e.f",
+		///     Message = "Message 1",
+		///     IsRecipientNotified = true,
+		///     CreatedOnUtc = new DateTime(2010, 01, 01),
+		///     IsGiftCardActivated = true
+		/// }
+        /// </returns>
         public static GiftCard GetGiftCard()
         {
-            var giftCard = new GiftCard
+            return new GiftCard
             {
                 Amount = 100,
                 GiftCardType = GiftCardType.Physical,
@@ -1544,14 +2362,18 @@ namespace Nop.Tests
                 CreatedOnUtc = new DateTime(2010, 01, 01),
                 IsGiftCardActivated = true
             };
-
-            return giftCard;
         }
 
         /// <summary>
         /// Get gift card usage history
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// GiftCardUsageHistory
+		/// {
+		///     UsedValue = 1.1M,
+		///     CreatedOnUtc = new DateTime(2010, 01, 01)
+		/// }
+        /// </returns>
         public static GiftCardUsageHistory GetGiftCardUsageHistory()
         {
             return new GiftCardUsageHistory
@@ -1564,7 +2386,63 @@ namespace Nop.Tests
         /// <summary>
         /// Get order
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Order
+		/// {
+		///     OrderGuid = Guid.NewGuid(),
+		///     Customer = GetCustomer(),
+		///     BillingAddress = GetAddress(),
+		///     Deleted = false,
+		///     CreatedOnUtc = new DateTime(2010, 01, 01),
+		///     StoreId = 1,
+		///     OrderStatus = OrderStatus.Complete,
+		///     ShippingStatus = ShippingStatus.Shipped,
+		///     PaymentStatus = PaymentStatus.Paid,
+		///     PaymentMethodSystemName = "PaymentMethodSystemName1",
+		///     CustomerCurrencyCode = "RUR",
+		///     CurrencyRate = 1.1M,
+		///     CustomerTaxDisplayType = TaxDisplayType.ExcludingTax,
+		///     VatNumber = "123456789",
+		///     OrderSubtotalInclTax = 2.1M,
+		///     OrderSubtotalExclTax = 3.1M,
+		///     OrderSubTotalDiscountInclTax = 4.1M,
+		///     OrderSubTotalDiscountExclTax = 5.1M,
+		///     OrderShippingInclTax = 6.1M,
+		///     OrderShippingExclTax = 7.1M,
+		///     PaymentMethodAdditionalFeeInclTax = 8.1M,
+		///     PaymentMethodAdditionalFeeExclTax = 9.1M,
+		///     TaxRates = "1,3,5,7",
+		///     OrderTax = 10.1M,
+		///     OrderDiscount = 11.1M,
+		///     OrderTotal = 12.1M,
+		///     RefundedAmount = 13.1M,
+		///     RewardPointsWereAdded = true,
+		///     CheckoutAttributeDescription = "CheckoutAttributeDescription1",
+		///     CheckoutAttributesXml = "CheckoutAttributesXml1",
+		///     CustomerLanguageId = 14,
+		///     CustomerIp = "CustomerIp1",
+		///     AllowStoringCreditCardNumber = true,
+		///     CardType = "Visa",
+		///     CardName = "John Smith",
+		///     CardNumber = "4111111111111111",
+		///     MaskedCreditCardNumber = "************1111",
+		///     CardCvv2 = "123",
+		///     CardExpirationMonth = "12",
+		///     CardExpirationYear = "2010",
+		///     AuthorizationTransactionId = "AuthorizationTransactionId1",
+		///     AuthorizationTransactionCode = "AuthorizationTransactionCode1",
+		///     AuthorizationTransactionResult = "AuthorizationTransactionResult1",
+		///     CaptureTransactionId = "CaptureTransactionId1",
+		///     CaptureTransactionResult = "CaptureTransactionResult1",
+		///     SubscriptionTransactionId = "SubscriptionTransactionId1",
+		///     PaidDateUtc = new DateTime(2010, 01, 01),
+		///     PickupAddress = GetAddress(),
+		///     ShippingMethod = "ShippingMethod1",
+		///     ShippingRateComputationMethodSystemName = "ShippingRateComputationMethodSystemName1",
+		///     PickUpInStore = true,
+		///     CustomValuesXml = "CustomValuesXml1"
+		/// }
+        /// </returns>
         public static Order GetOrder()
         {
             return new Order
@@ -1627,7 +2505,28 @@ namespace Nop.Tests
         /// <summary>
         /// Get order item
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// OrderItem
+		/// {
+		///     Product = GetProduct(),
+		///     Quantity = 1,
+		///     UnitPriceInclTax = 1.1M,
+		///     UnitPriceExclTax = 2.1M,
+		///     PriceInclTax = 3.1M,
+		///     PriceExclTax = 4.1M,
+		///     DiscountAmountInclTax = 5.1M,
+		///     DiscountAmountExclTax = 6.1M,
+		///     OriginalProductCost = 7.1M,
+		///     AttributeDescription = "AttributeDescription1",
+		///     AttributesXml = "AttributesXml1",
+		///     DownloadCount = 7,
+		///     IsDownloadActivated = true,
+		///     LicenseDownloadId = 8,
+		///     ItemWeight = 9.87M,
+		///     RentalStartDateUtc = new DateTime(2010, 01, 01),
+		///     RentalEndDateUtc = new DateTime(2010, 01, 02)
+		/// }
+        /// </returns>
         public static OrderItem GetOrderItem()
         {
             return new OrderItem
@@ -1655,7 +2554,15 @@ namespace Nop.Tests
         /// <summary>
         /// Get order note
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// OrderNote
+		/// {
+		///     Note = "Note1",
+		///     DownloadId = 1,
+		///     DisplayToCustomer = true,
+		///     CreatedOnUtc = new DateTime(2010, 01, 01)
+		/// }
+        /// </returns>
         public static OrderNote GetOrderNote()
         {
             return new OrderNote
@@ -1670,7 +2577,18 @@ namespace Nop.Tests
         /// <summary>
         /// Get recurring payment
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// RecurringPayment
+		/// {
+		///     CycleLength = 2,
+		///     CyclePeriod = RecurringProductCyclePeriod.Days,
+		///     TotalCycles = 3,
+		///     StartDateUtc = new DateTime(2010, 3, 1),
+		///     CreatedOnUtc = new DateTime(2010, 1, 1),
+		///     IsActive = true,
+		///     Deleted = false
+		/// }
+        /// </returns>
         public static RecurringPayment GetRecurringPayment()
         {
             return new RecurringPayment
@@ -1688,7 +2606,12 @@ namespace Nop.Tests
         /// <summary>
         /// Get recurring payment history
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// RecurringPaymentHistory
+        /// {
+        ///     CreatedOnUtc = new DateTime(2010, 01, 03)
+        /// }
+        /// </returns>
         public static RecurringPaymentHistory GetRecurringPaymentHistory()
         {
             return new RecurringPaymentHistory
@@ -1700,7 +2623,22 @@ namespace Nop.Tests
         /// <summary>
         /// Get return request
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ReturnRequest
+		/// {
+		///     CustomNumber = "CustomNumber 1",
+		///     StoreId = 1,
+		///     Customer = GetCustomer(),
+		///     Quantity = 2,
+		///     ReasonForReturn = "Wrong product",
+		///     RequestedAction = "Refund",
+		///     CustomerComments = "Some comment",
+		///     StaffNotes = "Some notes",
+		///     ReturnRequestStatus = ReturnRequestStatus.ItemsRefunded,
+		///     CreatedOnUtc = new DateTime(2010, 01, 01),
+		///     UpdatedOnUtc = new DateTime(2010, 01, 02),
+		/// }
+        /// </returns>
         public static ReturnRequest GetReturnRequest()
         {
             return new ReturnRequest
@@ -1722,7 +2660,13 @@ namespace Nop.Tests
         /// <summary>
         /// Get return request action
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ReturnRequestAction
+		/// {
+		///     Name = "Name 1",
+		///     DisplayOrder = 1
+		/// }
+        /// </returns>
         public static ReturnRequestAction GetReturnRequestAction()
         {
             return new ReturnRequestAction
@@ -1735,7 +2679,13 @@ namespace Nop.Tests
         /// <summary>
         /// Get return request reason
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ReturnRequestReason
+		/// {
+		///     Name = "Name 1",
+		///     DisplayOrder = 1
+		/// }
+        /// </returns>
         public static ReturnRequestReason GetReturnRequestReason()
         {
             return new ReturnRequestReason
@@ -1748,7 +2698,21 @@ namespace Nop.Tests
         /// <summary>
         /// Get shopping cart item
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ShoppingCartItem
+		/// {
+		///     ShoppingCartType = ShoppingCartType.ShoppingCart,
+		///     AttributesXml = "AttributesXml 1",
+		///     CustomerEnteredPrice = 1,
+		///     Quantity = 2,
+		///     CreatedOnUtc = new DateTime(2010, 01, 01),
+		///     UpdatedOnUtc = new DateTime(2010, 01, 02),
+		///     Product = GetProduct(),
+		///     StoreId = 1,
+		///     RentalStartDateUtc = new DateTime(2010, 01, 03),
+		///     RentalEndDateUtc = new DateTime(2010, 01, 04)
+		/// }
+        /// </returns>
         public static ShoppingCartItem GetShoppingCartItem()
         {
             return new ShoppingCartItem
@@ -1773,7 +2737,19 @@ namespace Nop.Tests
         /// <summary>
         /// Get poll
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Poll
+		/// {
+		///     Name = "Name 1",
+		///     SystemKeyword = "SystemKeyword 1",
+		///     Published = true,
+		///     ShowOnHomePage = true,
+		///     DisplayOrder = 1,
+		///     StartDateUtc = new DateTime(2010, 01, 01),
+		///     EndDateUtc = new DateTime(2010, 01, 02),
+		///     Language = GetLanguage()
+		/// }
+        /// </returns>
         public static Poll GetPoll()
         {
             return new Poll
@@ -1792,7 +2768,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get poll answer
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// PollAnswer
+		/// {
+		///     Name = "Answer 1",
+		///     NumberOfVotes = 1,
+		///     DisplayOrder = 2,
+		/// }
+        /// </returns>
         public static PollAnswer GetPollAnswer()
         {
             return new PollAnswer
@@ -1806,7 +2789,13 @@ namespace Nop.Tests
         /// <summary>
         /// Get poll voting record
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// PollVotingRecord
+		/// {
+		///     Customer = GetCustomer(),
+		///     CreatedOnUtc = DateTime.UtcNow
+		/// }
+        /// </returns>
         public static PollVotingRecord GetPollVotingRecord()
         {
             return new PollVotingRecord
@@ -1823,7 +2812,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get ACL record
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// AclRecord
+		/// {
+		///     EntityId = 1,
+		///     EntityName = "EntityName 1",
+		///     CustomerRole = GetCustomerRole("Administrators")
+		/// }
+        /// </returns>
         public static AclRecord GetAclRecord()
         {
             return new AclRecord
@@ -1837,7 +2833,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get permission record
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// PermissionRecord
+		/// {
+		///     Name = "Name 1",
+		///     SystemName = "SystemName 2",
+		///     Category = "Category 4",
+		/// }
+        /// </returns>
         public static PermissionRecord GetPermissionRecord()
         {
             return new PermissionRecord
@@ -1855,7 +2858,15 @@ namespace Nop.Tests
         /// <summary>
         /// Get URL record
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// UrlRecord
+		/// {
+		///     EntityId = 1,
+		///     EntityName = "EntityName 1",
+		///     Slug = "Slug 1",
+		///     LanguageId = 2
+		/// }
+        /// </returns>
         public static UrlRecord GetUrlRecord()
         {
             return new UrlRecord
@@ -1874,7 +2885,13 @@ namespace Nop.Tests
         /// <summary>
         /// Get delivery date
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// DeliveryDate
+		/// {
+		///     Name = "Name 1",
+		///     DisplayOrder = 1
+		/// }
+        /// </returns>
         public static DeliveryDate GetDeliveryDate()
         {
             return new DeliveryDate
@@ -1887,7 +2904,17 @@ namespace Nop.Tests
         /// <summary>
         /// Get shipment
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Shipment
+		/// {
+		///     TrackingNumber = "TrackingNumber 1",
+		///     ShippedDateUtc = new DateTime(2010, 01, 01),
+		///     DeliveryDateUtc = new DateTime(2010, 01, 02),
+		///     CreatedOnUtc = new DateTime(2010, 01, 03),
+		///     TotalWeight = 9.87M,
+		///     AdminComment = "AdminComment 1"
+		/// }
+        /// </returns>
         public static Shipment GetShipment()
         {
             return new Shipment
@@ -1904,7 +2931,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get shipment item
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ShipmentItem
+		/// {
+		///     OrderItemId = 2,
+		///     Quantity = 3,
+		///     WarehouseId = 4
+		/// }
+        /// </returns>
         public static ShipmentItem GetShipmentItem()
         {
             return new ShipmentItem
@@ -1918,7 +2952,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get shipping method
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ShippingMethod
+		/// {
+		///     Name = "By train",
+		///     Description = "Description 1",
+		///     DisplayOrder = 1
+		/// }
+        /// </returns>
         public static ShippingMethod GetShippingMethod()
         {
             return new ShippingMethod
@@ -1932,7 +2973,25 @@ namespace Nop.Tests
         /// <summary>
         /// Get shipping options
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// List<ShippingOption>
+		/// {
+		///     new ShippingOption
+		///     {
+		///         Name = "a1",
+		///         Description = "a2",
+		///         Rate = 3.57M,
+		///         ShippingRateComputationMethodSystemName = "a4"
+		///     },
+		///     new ShippingOption
+		///     {
+		///         Name = "b1",
+		///         Description = "b2",
+		///         Rate = 7.00M,
+		///         ShippingRateComputationMethodSystemName = "b4"
+		///     }
+		/// }
+        /// </returns>
         public static IList<ShippingOption> GetShippingOptions()
         {
             return new List<ShippingOption>
@@ -1957,7 +3016,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get warehouse
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Warehouse
+		/// {
+		///     Name = "Name 2",
+		///     AddressId = 1,
+		///     AdminComment = "AdminComment 1"
+		/// }
+        /// </returns>
         public static Warehouse GetWarehouse()
         {
             return new Warehouse
@@ -1975,7 +3041,21 @@ namespace Nop.Tests
         /// <summary>
         /// Get store
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Store
+		/// {
+		///     Id = 1,
+		///     Hosts = "yourstore.com, www.yourstore.com, ",
+		///     Name = "Store 1",
+		///     DisplayOrder = 1,
+		///     Url = "http://www.test.com",
+		///     DefaultLanguageId = 1,
+		///     CompanyName = "company name",
+		///     CompanyAddress = "some address",
+		///     CompanyPhoneNumber = "123456789",
+		///     CompanyVat = "some vat",
+		/// }
+        /// </returns>
         public static Store GetStore()
         {
             return new Store
@@ -1996,7 +3076,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get store mapping
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// StoreMapping
+		/// {
+		///     EntityId = 1,
+		///     EntityName = "EntityName 1",
+		///     Store = GetStore()
+		/// }
+        /// </returns>
         public static StoreMapping GetStoreMapping()
         {
             return new StoreMapping
@@ -2014,7 +3101,21 @@ namespace Nop.Tests
         /// <summary>
         /// Get schedule task
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// ScheduleTask
+		/// {
+		///     Name = "Task 1",
+		///     Seconds = 1,
+		///     Type = "some type 1",
+		///     Enabled = true,
+		///     StopOnError = true,
+		///     LeasedByMachineName = "LeasedByMachineName 1",
+		///     LeasedUntilUtc = new DateTime(2009, 01, 01),
+		///     LastStartUtc = new DateTime(2010, 01, 01),
+		///     LastEndUtc = new DateTime(2010, 01, 02),
+		///     LastSuccessUtc = new DateTime(2010, 01, 03),
+		/// }
+        /// </returns>
         public static ScheduleTask GetScheduleTask()
         {
             return new ScheduleTask
@@ -2039,7 +3140,13 @@ namespace Nop.Tests
         /// <summary>
         /// Ge tax category
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// TaxCategory
+		/// {
+		///     Name = "Books",
+		///     DisplayOrder = 1
+		/// }
+        /// </returns>
         public static TaxCategory GeTaxCategory()
         {
             return new TaxCategory
@@ -2056,7 +3163,30 @@ namespace Nop.Tests
         /// <summary>
         /// Get topic
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Topic
+		/// {
+		///     SystemName = "SystemName 1",
+		///     IncludeInSitemap = true,
+		///     IncludeInTopMenu = true,
+		///     IncludeInFooterColumn1 = true,
+		///     IncludeInFooterColumn2 = true,
+		///     IncludeInFooterColumn3 = true,
+		///     DisplayOrder = 1,
+		///     AccessibleWhenStoreClosed = true,
+		///     IsPasswordProtected = true,
+		///     Password = "password",
+		///     Title = "Title 1",
+		///     Body = "Body 1",
+		///     Published = true,
+		///     TopicTemplateId = 1,
+		///     MetaKeywords = "Meta keywords",
+		///     MetaDescription = "Meta description",
+		///     MetaTitle = "Meta title",
+		///     SubjectToAcl = true,
+		///     LimitedToStores = true
+		/// }
+        /// </returns>
         public static Topic GetTopic()
         {
             return new Topic
@@ -2086,7 +3216,14 @@ namespace Nop.Tests
         /// <summary>
         /// Get topic template
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// TopicTemplate
+		/// {
+		///     Name = "Name 1",
+		///     ViewPath = "ViewPath 1",
+		///     DisplayOrder = 1,
+		/// }
+        /// </returns>
         public static TopicTemplate GetTopicTemplate()
         {
             return new TopicTemplate
@@ -2104,7 +3241,25 @@ namespace Nop.Tests
         /// <summary>
         /// Get vendor
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// Vendor
+		/// {
+		///     Name = "Name 1",
+		///     Email = "Email 1",
+		///     Description = "Description 1",
+		///     AdminComment = "AdminComment 1",
+		///     PictureId = 1,
+		///     Active = true,
+		///     Deleted = true,
+		///     DisplayOrder = 2,
+		///     MetaKeywords = "Meta keywords",
+		///     MetaDescription = "Meta description",
+		///     MetaTitle = "Meta title",
+		///     PageSize = 4,
+		///     AllowCustomersToSelectPageSize = true,
+		///     PageSizeOptions = "4, 2, 8, 12",
+		/// }
+        /// </returns>
         public static Vendor GetVendor()
         {
             return new Vendor
@@ -2129,7 +3284,13 @@ namespace Nop.Tests
         /// <summary>
         /// Get vendor note
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// VendorNote
+		/// {
+		///     Note = "Note1",
+		///     CreatedOnUtc = new DateTime(2010, 01, 01)
+		/// }
+        /// </returns>
         public static VendorNote GetVendorNote()
         {
             return new VendorNote
@@ -2150,7 +3311,16 @@ namespace Nop.Tests
         /// <summary>
         /// Get discount for caching
         /// </summary>
-        /// <returns></returns>
+        /// <returns>
+        /// DiscountForCaching
+		/// {
+		///     Id = 1,
+		///     Name = "Discount 1",
+		///     DiscountType = DiscountType.AssignedToShipping,
+		///     DiscountAmount = 3,
+		///     DiscountLimitation = DiscountLimitationType.Unlimited,
+		/// }
+        /// </returns>
         public static DiscountForCaching GetDiscountForCaching()
         {
             return new DiscountForCaching
