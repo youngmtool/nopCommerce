@@ -37,6 +37,11 @@ var Accordion = {
             var contents = section.children('.a-item');
             $(contents[0]).show();
 
+            //trigger event
+            $.event.trigger({
+                type: "accordion_open_section",
+                section: section
+            });
 
             if (this.disallowAccessToNextSections) {
                 var pastCurrentSection = false;

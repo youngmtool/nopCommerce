@@ -495,6 +495,7 @@ namespace Nop.Web.Controllers
             {
                 return Json(new
                 {
+                    success = false,
                     redirect = Url.RouteUrl("Product", new { SeName = product.GetSeName() }),
                 });
             }
@@ -506,6 +507,7 @@ namespace Nop.Web.Controllers
                 //it can confuse customers. That's why we redirect customers to the product details page
                 return Json(new
                 {
+                    success = false,
                     redirect = Url.RouteUrl("Product", new { SeName = product.GetSeName() }),
                 });
             }
@@ -515,6 +517,7 @@ namespace Nop.Web.Controllers
                 //cannot be added to the cart (requires a customer to enter price)
                 return Json(new
                 {
+                    success = false,
                     redirect = Url.RouteUrl("Product", new { SeName = product.GetSeName() }),
                 });
             }
@@ -524,6 +527,7 @@ namespace Nop.Web.Controllers
                 //rental products require start/end dates to be entered
                 return Json(new
                 {
+                    success = false,
                     redirect = Url.RouteUrl("Product", new { SeName = product.GetSeName() }),
                 });
             }
@@ -534,6 +538,7 @@ namespace Nop.Web.Controllers
                 //cannot be added to the cart (requires a customer to select a quantity from dropdownlist)
                 return Json(new
                 {
+                    success = false,
                     redirect = Url.RouteUrl("Product", new { SeName = product.GetSeName() }),
                 });
             }
@@ -545,6 +550,7 @@ namespace Nop.Web.Controllers
                 //product has some attributes. let a customer see them
                 return Json(new
                 {
+                    success = false,
                     redirect = Url.RouteUrl("Product", new { SeName = product.GetSeName() }),
                 });
             }
@@ -601,6 +607,7 @@ namespace Nop.Web.Controllers
                 //but we do not display attribute and gift card warnings here. let's do it on the product details page
                 return Json(new
                 {
+                    success = false,
                     redirect = Url.RouteUrl("Product", new { SeName = product.GetSeName() }),
                 });
             }
@@ -618,6 +625,15 @@ namespace Nop.Web.Controllers
                             //redirect to the wishlist page
                             return Json(new
                             {
+                                success = true,
+                                shoppingCartItemId =
+                                    _shoppingCartService.FindShoppingCartItemInTheCart(
+                                        _workContext.CurrentCustomer.ShoppingCartItems
+                                            .Where(sci => sci.ShoppingCartType == cartType)
+                                            .LimitPerStore(_storeContext.CurrentStore.Id)
+                                            .ToList(), cartType, product).Id,
+                                quantity = quantity,
+                                shoppingCartTypeId = shoppingCartTypeId,
                                 redirect = Url.RouteUrl("Wishlist"),
                             });
                         }
@@ -632,7 +648,18 @@ namespace Nop.Web.Controllers
                         return Json(new
                         {
                             success = true,
-                            message = string.Format(_localizationService.GetResource("Products.ProductHasBeenAddedToTheWishlist.Link"), Url.RouteUrl("Wishlist")),
+                            shoppingCartItemId =
+                                _shoppingCartService.FindShoppingCartItemInTheCart(
+                                    _workContext.CurrentCustomer.ShoppingCartItems
+                                        .Where(sci => sci.ShoppingCartType == cartType)
+                                        .LimitPerStore(_storeContext.CurrentStore.Id)
+                                        .ToList(), cartType, product).Id,
+                            quantity = quantity,
+                            shoppingCartTypeId = shoppingCartTypeId,
+                            message =
+                                string.Format(
+                                    _localizationService.GetResource("Products.ProductHasBeenAddedToTheWishlist.Link"),
+                                    Url.RouteUrl("Wishlist")),
                             updatetopwishlistsectionhtml = updatetopwishlistsectionhtml,
                         });
                     }
@@ -647,6 +674,15 @@ namespace Nop.Web.Controllers
                             //redirect to the shopping cart page
                             return Json(new
                             {
+                                success = true,
+                                shoppingCartItemId =
+                                    _shoppingCartService.FindShoppingCartItemInTheCart(
+                                        _workContext.CurrentCustomer.ShoppingCartItems
+                                            .Where(sci => sci.ShoppingCartType == cartType)
+                                            .LimitPerStore(_storeContext.CurrentStore.Id)
+                                            .ToList(), cartType, product).Id,
+                                quantity = quantity,
+                                shoppingCartTypeId = shoppingCartTypeId,
                                 redirect = Url.RouteUrl("ShoppingCart"),
                             });
                         }
@@ -666,7 +702,18 @@ namespace Nop.Web.Controllers
                         return Json(new
                         {
                             success = true,
-                            message = string.Format(_localizationService.GetResource("Products.ProductHasBeenAddedToTheCart.Link"), Url.RouteUrl("ShoppingCart")),
+                            shoppingCartItemId =
+                                _shoppingCartService.FindShoppingCartItemInTheCart(
+                                    _workContext.CurrentCustomer.ShoppingCartItems
+                                        .Where(sci => sci.ShoppingCartType == cartType)
+                                        .LimitPerStore(_storeContext.CurrentStore.Id)
+                                        .ToList(), cartType, product).Id,
+                            quantity = quantity,
+                            shoppingCartTypeId = shoppingCartTypeId,
+                            message =
+                                string.Format(
+                                    _localizationService.GetResource("Products.ProductHasBeenAddedToTheCart.Link"),
+                                    Url.RouteUrl("ShoppingCart")),
                             updatetopcartsectionhtml = updatetopcartsectionhtml,
                             updateflyoutcartsectionhtml = updateflyoutcartsectionhtml
                         });
@@ -685,6 +732,7 @@ namespace Nop.Web.Controllers
             {
                 return Json(new
                 {
+                    success = false,
                     redirect = Url.RouteUrl("HomePage"),
                 });
             }
@@ -845,6 +893,15 @@ namespace Nop.Web.Controllers
                             //redirect to the wishlist page
                             return Json(new
                             {
+                                success = true,
+                                shoppingCartItemId =
+                                    _shoppingCartService.FindShoppingCartItemInTheCart(
+                                        _workContext.CurrentCustomer.ShoppingCartItems
+                                            .Where(sci => sci.ShoppingCartType == cartType)
+                                            .LimitPerStore(_storeContext.CurrentStore.Id)
+                                            .ToList(), cartType, product).Id,
+                                quantity = quantity,
+                                shoppingCartTypeId = shoppingCartTypeId,
                                 redirect = Url.RouteUrl("Wishlist"),
                             });
                         }
@@ -856,11 +913,22 @@ namespace Nop.Web.Controllers
                         .LimitPerStore(_storeContext.CurrentStore.Id)
                         .ToList()
                         .GetTotalProducts());
-                        
+
                         return Json(new
                         {
                             success = true,
-                            message = string.Format(_localizationService.GetResource("Products.ProductHasBeenAddedToTheWishlist.Link"), Url.RouteUrl("Wishlist")),
+                            shoppingCartItemId =
+                                _shoppingCartService.FindShoppingCartItemInTheCart(
+                                    _workContext.CurrentCustomer.ShoppingCartItems
+                                        .Where(sci => sci.ShoppingCartType == cartType)
+                                        .LimitPerStore(_storeContext.CurrentStore.Id)
+                                        .ToList(), cartType, product).Id,
+                            quantity = quantity,
+                            shoppingCartTypeId = shoppingCartTypeId,
+                            message =
+                                string.Format(
+                                    _localizationService.GetResource("Products.ProductHasBeenAddedToTheWishlist.Link"),
+                                    Url.RouteUrl("Wishlist")),
                             updatetopwishlistsectionhtml = updatetopwishlistsectionhtml,
                         });
                     }
@@ -875,6 +943,15 @@ namespace Nop.Web.Controllers
                             //redirect to the shopping cart page
                             return Json(new
                             {
+                                success = true,
+                                shoppingCartItemId =
+                                    _shoppingCartService.FindShoppingCartItemInTheCart(
+                                        _workContext.CurrentCustomer.ShoppingCartItems
+                                            .Where(sci => sci.ShoppingCartType == cartType)
+                                            .LimitPerStore(_storeContext.CurrentStore.Id)
+                                            .ToList(), cartType, product).Id,
+                                quantity = quantity,
+                                shoppingCartTypeId = shoppingCartTypeId,
                                 redirect = Url.RouteUrl("ShoppingCart"),
                             });
                         }
@@ -894,7 +971,18 @@ namespace Nop.Web.Controllers
                         return Json(new
                         {
                             success = true,
-                            message = string.Format(_localizationService.GetResource("Products.ProductHasBeenAddedToTheCart.Link"), Url.RouteUrl("ShoppingCart")),
+                            shoppingCartItemId =
+                                _shoppingCartService.FindShoppingCartItemInTheCart(
+                                    _workContext.CurrentCustomer.ShoppingCartItems
+                                        .Where(sci => sci.ShoppingCartType == cartType)
+                                        .LimitPerStore(_storeContext.CurrentStore.Id)
+                                        .ToList(), cartType, product).Id,
+                            quantity = quantity,
+                            shoppingCartTypeId = shoppingCartTypeId,
+                            message =
+                                string.Format(
+                                    _localizationService.GetResource("Products.ProductHasBeenAddedToTheCart.Link"),
+                                    Url.RouteUrl("ShoppingCart")),
                             updatetopcartsectionhtml = updatetopcartsectionhtml,
                             updateflyoutcartsectionhtml = updateflyoutcartsectionhtml
                         });

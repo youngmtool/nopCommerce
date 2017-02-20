@@ -30,6 +30,12 @@
                             $('#password-error-@Model.Id').text(data.Error).fadeIn("slow");
                             $('#ph-password-@Model.Id #password-@Model.Id').select().focus();
                         }
+
+                        //trigger event
+                        $.event.trigger({
+                            type: "topic_authenticate_success",
+                            authenticated: data.Authenticated
+                        });
                     }
                 });
                 return false;

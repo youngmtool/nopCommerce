@@ -264,6 +264,13 @@
                             $('#checkout_attribute_input_' + data.disabledattributeids[i]).hide();
                         }
                     }
+
+                    //trigger event
+                    $.event.trigger({
+                        type: "checkout_attributes_changed",
+                        enabledattributeids: enabledattributeids,
+                        disabledattributeids: disabledattributeids
+                    });
                 }
             });
         }

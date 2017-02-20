@@ -89,6 +89,14 @@ var Checkout = {
             Shipping.newAddress(!$('#shipping-address-select').val());
         }
 
+        //trigger event
+        $.event.trigger({
+            type: "opc_step_response_loaded",
+            newStepName: response.update_section.name,
+            gotoSection: response.goto_section,
+            redirect: response.redirect
+        });
+
         if (response.goto_section) {
             Checkout.gotoSection(response.goto_section);
             return true;
@@ -100,9 +108,6 @@ var Checkout = {
         return false;
     }
 };
-
-
-
 
 
 var Billing = {
@@ -135,6 +140,12 @@ var Billing = {
     save: function () {
         if (Checkout.loadWaiting != false) return;
 
+        //trigger event
+        $.event.trigger({
+            type: "opc_next_button_click",
+            stepName: "billing"
+        });
+
         Checkout.setLoadWaiting('billing');
         
         $.ajax({
@@ -165,8 +176,7 @@ var Billing = {
                 Accordion.hideSection('#opc-billing');
             }
         }
-
-
+        
         if (response.error) {
             if ((typeof response.message) == 'string') {
                 alert(response.message);
@@ -180,7 +190,6 @@ var Billing = {
         Checkout.setStepResponse(response);
     }
 };
-
 
 
 var Shipping = {
@@ -222,6 +231,12 @@ var Shipping = {
     save: function () {
         if (Checkout.loadWaiting != false) return;
 
+        //trigger event
+        $.event.trigger({
+            type: "opc_next_button_click",
+            stepName: "shipping"
+        });
+
         Checkout.setLoadWaiting('shipping');
         
         $.ajax({
@@ -255,7 +270,6 @@ var Shipping = {
 };
 
 
-
 var ShippingMethod = {
     form: false,
     saveUrl: false,
@@ -285,6 +299,12 @@ var ShippingMethod = {
         if (Checkout.loadWaiting != false) return;
         
         if (this.validate()) {
+            //trigger event
+            $.event.trigger({
+                type: "opc_next_button_click",
+                stepName: "shipping-method"
+            });
+
             Checkout.setLoadWaiting('shipping-method');
         
             $.ajax({
@@ -317,7 +337,6 @@ var ShippingMethod = {
         Checkout.setStepResponse(response);
     }
 };
-
 
 
 var PaymentMethod = {
@@ -358,7 +377,14 @@ var PaymentMethod = {
         if (Checkout.loadWaiting != false) return;
         
         if (this.validate()) {
+            //trigger event
+            $.event.trigger({
+                type: "opc_next_button_click",
+                stepName: "payment-method"
+            });
+
             Checkout.setLoadWaiting('payment-method');
+
             $.ajax({
                 cache: false,
                 url: this.saveUrl,
@@ -391,7 +417,6 @@ var PaymentMethod = {
 };
 
 
-
 var PaymentInfo = {
     form: false,
     saveUrl: false,
@@ -404,7 +429,14 @@ var PaymentInfo = {
     save: function () {
         if (Checkout.loadWaiting != false) return;
         
+        //trigger event
+        $.event.trigger({
+            type: "opc_next_button_click",
+            stepName: "payment-info"
+        });
+
         Checkout.setLoadWaiting('payment-info');
+
         $.ajax({
             cache: false,
             url: this.saveUrl,
@@ -436,7 +468,6 @@ var PaymentInfo = {
 };
 
 
-
 var ConfirmOrder = {
     form: false,
     saveUrl: false,
@@ -450,6 +481,12 @@ var ConfirmOrder = {
     save: function () {
         if (Checkout.loadWaiting != false) return;
         
+        //trigger event
+        $.event.trigger({
+            type: "opc_next_button_click",
+            stepName: "confirm-order"
+        });
+
         //terms of service
         var termOfServiceOk = true;
         if ($('#termsofservice').length > 0) {

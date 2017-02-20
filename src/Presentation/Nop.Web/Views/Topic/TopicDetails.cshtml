@@ -60,6 +60,12 @@
                             $('#password-error').text(data.Error).fadeIn("slow");
                             $('#ph-password #password').select().focus();
                         }
+
+                        //trigger event
+                        $.event.trigger({
+                            type: "topic_authenticate_success",
+                            authenticated: data.Authenticated
+                        });
                     }
                 });
                 return false;

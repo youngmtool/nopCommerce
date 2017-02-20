@@ -76,42 +76,51 @@ var AjaxCart = {
     },
 
     success_process: function (response) {
-        if (response.updatetopcartsectionhtml) {
-            $(AjaxCart.topcartselector).html(response.updatetopcartsectionhtml);
-        }
-        if (response.updatetopwishlistsectionhtml) {
-            $(AjaxCart.topwishlistselector).html(response.updatetopwishlistsectionhtml);
-        }
-        if (response.updateflyoutcartsectionhtml) {
-            $(AjaxCart.flyoutcartselector).replaceWith(response.updateflyoutcartsectionhtml);
-        }
-        if (response.message) {
-            //display notification
-            if (response.success == true) {
-                //success
+        if (response.success) {
+            if (response.updatetopcartsectionhtml) {
+                $(AjaxCart.topcartselector).html(response.updatetopcartsectionhtml);
+            }
+            if (response.updatetopwishlistsectionhtml) {
+                $(AjaxCart.topwishlistselector).html(response.updatetopwishlistsectionhtml);
+            }
+            if (response.updateflyoutcartsectionhtml) {
+                $(AjaxCart.flyoutcartselector).replaceWith(response.updateflyoutcartsectionhtml);
+            }
+            if (response.message) {
+                //display success notification
                 if (AjaxCart.usepopupnotifications == true) {
                     displayPopupNotification(response.message, 'success', true);
-                }
-                else {
+                } else {
                     //specify timeout for success messages
                     displayBarNotification(response.message, 'success', 3500);
                 }
             }
-            else {
-                //error
+
+            //shopping cart or wishlist
+            if (response.shoppingCartTypeId) {
+                //trigger event
+                $.event.trigger({
+                    type: "product_added_to_cart",
+                    shoppingCartTypeId: response.shoppingCartTypeId,
+                    shoppingCartItemId: response.shoppingCartItemId,
+                    quantity: response.quantity
+                });
+            }
+
+            if (response.redirect) {
+                location.href = response.redirect;
+                return true;
+            }
+        } else {
+            if (response.message) {
+                //display error notification
                 if (AjaxCart.usepopupnotifications == true) {
                     displayPopupNotification(response.message, 'error', true);
-                }
-                else {
+                } else {
                     //no timeout for errors
                     displayBarNotification(response.message, 'error', 0);
                 }
             }
-            return false;
-        }
-        if (response.redirect) {
-            location.href = response.redirect;
-            return true;
         }
         return false;
     },

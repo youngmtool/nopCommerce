@@ -58,6 +58,9 @@
                             if (data.html) {
                                 $("#poll-block-@(Model.Id)").replaceWith(data.html);
                             }
+
+                            //trigger event
+                            $.event.trigger({ type: "poll_vote_success" });
                         },
                         error: function (xhr, ajaxOptions, thrownError) {
                             alert('Failed to vote.');

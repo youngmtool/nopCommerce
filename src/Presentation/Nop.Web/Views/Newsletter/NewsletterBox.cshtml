@@ -47,6 +47,9 @@
                     if (data.Success) {
                         $('#newsletter-subscribe-block').hide();
                         $('#newsletter-result-block').show();
+
+                        //trigger event
+                        $.event.trigger({ type: "newsletter_subscribe_success" });
                     } else {
                         $('#newsletter-result-block').fadeIn("slow").delay(2000).fadeOut("slow");
                     }

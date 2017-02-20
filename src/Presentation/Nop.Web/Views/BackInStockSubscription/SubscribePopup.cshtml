@@ -52,6 +52,12 @@
                             url: "@(Url.RouteUrl("BackInStockSubscribeSend"))",
                             data: { "productId": '@Model.ProductId' },
                             success: function (data) {
+                                //trigger event
+                                $.event.trigger({
+                                    type: "back_in_stock_suscribe_complete",
+                                    resultText: data.result
+                                });
+
                                 $(subscribeButton).closest('.ui-dialog-content').dialog('destroy').remove();
                             },
                             error: function (xhr, ajaxOptions, thrownError) {

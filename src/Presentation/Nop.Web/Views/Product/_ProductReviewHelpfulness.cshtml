@@ -33,7 +33,15 @@
                          $("#helpfulness-vote-no-@(Model.ProductReviewId)").html(data.TotalNo);
                          $("#helpfulness-vote-result-@(Model.ProductReviewId)").html(data.Result);
                                                   
-                         $('#helpfulness-vote-result-@(Model.ProductReviewId)').fadeIn("slow").delay(1000).fadeOut("slow");
+                        $('#helpfulness-vote-result-@(Model.ProductReviewId)').fadeIn("slow").delay(1000).fadeOut("slow");
+
+                        //trigger event
+                        $.event.trigger({
+                            type: "helpfulness_vote_success",
+                            totalYes: data.TotalYes,
+                            totalNo: data.TotalNo,
+                            resultText: data.Result
+                        });
                     },
                     error:function (xhr, ajaxOptions, thrownError){
                         alert('Failed to vote. Please refresh the page and try one more time.');
