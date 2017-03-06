@@ -464,21 +464,17 @@
                     @if (Model.Id > 0)
                     {
                         <div class="form-group @(Model.ProductEditorSettingsModel.Id ? null : "advanced-setting")">
-                            <div class="col-md-3">
-                                @Html.NopLabelFor(model => model.Id)
-                            </div>
                             <div class="col-md-9">
                                 @Html.NopDisplayFor(model => model.Id)
+                                @Html.NopLabelFor(model => model.Id)
                                 @Html.ValidationMessageFor(model => model.Id)
                             </div>
                         </div>
                     }
                     <div class="form-group @(Model.ProductEditorSettingsModel.ProductType ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.ProductTypeId)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopDropDownListFor(model => model.ProductTypeId, ((ProductType)Model.ProductTypeId).ToSelectList())
+                            @Html.NopLabelFor(model => model.ProductTypeId)
                             @Html.ValidationMessageFor(model => model.ProductTypeId)
                         </div>
                     </div>
@@ -497,20 +493,16 @@
                         </div>
                     }
                     <div class="form-group @(Model.ProductEditorSettingsModel.ProductTemplate ? null : "advanced-setting")" @(Model.AvailableProductTemplates.SelectionIsNotPossible() ? Html.Raw("style=\"display:none\"") : null) id="pnlProductTemplateId">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.ProductTemplateId)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopDropDownListFor(model => model.ProductTemplateId, Model.AvailableProductTemplates)
+                            @Html.NopLabelFor(model => model.ProductTemplateId)
                             @Html.ValidationMessageFor(model => model.ProductTemplateId)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.VisibleIndividually ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.VisibleIndividually)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.VisibleIndividually)
+                            @Html.NopLabelFor(model => model.VisibleIndividually)
                             @Html.ValidationMessageFor(model => model.VisibleIndividually)
                         </div>
                     </div>
@@ -518,29 +510,23 @@
                     @(Html.LocalizedEditor<ProductModel, ProductLocalizedModel>("product-info-localized",
                     @<div>
                         <div class="form-group">
-                            <div class="col-md-3">
-                                @Html.NopLabelFor(model => model.Locales[item].Name)
-                            </div>
                             <div class="col-md-9">
                                 @Html.NopEditorFor(model => model.Locales[item].Name)
+                                @Html.NopLabelFor(model => model.Locales[item].Name)
                                 @Html.ValidationMessageFor(model => model.Locales[item].Name)
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-3">
-                                @Html.NopLabelFor(model => model.Locales[item].ShortDescription)
-                            </div>
                             <div class="col-md-9">
                                 @Html.NopTextAreaFor(model => model.Locales[item].ShortDescription)
+                                @Html.NopLabelFor(model => model.Locales[item].ShortDescription)
                                 @Html.ValidationMessageFor(model => model.Locales[item].ShortDescription)
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-3">
-                                @Html.NopLabelFor(model => model.Locales[item].FullDescription)
-                            </div>
                             <div class="col-md-9">
                                 @Html.EditorFor(model => model.Locales[item].FullDescription, "RichEditor")
+                                @Html.NopLabelFor(model => model.Locales[item].FullDescription)
                                 @Html.ValidationMessageFor(model => model.Locales[item].FullDescription)
                             </div>
                         </div>
@@ -548,157 +534,123 @@
                     </div>
                             ,@<div>
                         <div class="form-group">
-                            <div class="col-md-3">
-                                @Html.NopLabelFor(model => model.Name)
-                            </div>
                             <div class="col-md-9">
                                 @Html.NopEditorFor(model => model.Name, required: true)
+                                @Html.NopLabelFor(model => model.Name)
                                 @Html.ValidationMessageFor(model => model.Name)
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-3">
-                                @Html.NopLabelFor(model => model.ShortDescription)
-                            </div>
                             <div class="col-md-9">
                                 @Html.NopTextAreaFor(x => x.ShortDescription)
+                                @Html.NopLabelFor(model => model.ShortDescription)
                                 @Html.ValidationMessageFor(model => model.ShortDescription)
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-3">
-                                @Html.NopLabelFor(model => model.FullDescription)
-                            </div>
                             <div class="col-md-9">
                                 @Html.EditorFor(x => x.FullDescription, "RichEditor")
+                                @Html.NopLabelFor(model => model.FullDescription)
                                 @Html.ValidationMessageFor(model => model.FullDescription)
                             </div>
                         </div>
                     </div>
                             ))
                     <div class="form-group">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.Sku)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.Sku)
+                            @Html.NopLabelFor(model => model.Sku)
                             @Html.ValidationMessageFor(model => model.Sku)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.Published ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.Published)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.Published)
+                            @Html.NopLabelFor(model => model.Published)
                             @Html.ValidationMessageFor(model => model.Published)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.ProductTags ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.ProductTags)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.ProductTags)
+                            @Html.NopLabelFor(model => model.ProductTags)
                             @Html.ValidationMessageFor(model => model.ProductTags)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.GTIN ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.Gtin)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.Gtin)
+                            @Html.NopLabelFor(model => model.Gtin)
                             @Html.ValidationMessageFor(model => model.Gtin)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.ManufacturerPartNumber ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.ManufacturerPartNumber)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.ManufacturerPartNumber)
+                            @Html.NopLabelFor(model => model.ManufacturerPartNumber)
                             @Html.ValidationMessageFor(model => model.ManufacturerPartNumber)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.ShowOnHomePage ? null : "advanced-setting")" @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.ShowOnHomePage)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.ShowOnHomePage)
+                            @Html.NopLabelFor(model => model.ShowOnHomePage)
                             @Html.ValidationMessageFor(model => model.ShowOnHomePage)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.DisplayOrder ? null : "advanced-setting")" id="pnlDisplayOrder" @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.DisplayOrder)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.DisplayOrder)
+                            @Html.NopLabelFor(model => model.DisplayOrder)
                             @Html.ValidationMessageFor(model => model.DisplayOrder)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AllowCustomerReviews ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.AllowCustomerReviews)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.AllowCustomerReviews)
+                            @Html.NopLabelFor(model => model.AllowCustomerReviews)
                             @Html.ValidationMessageFor(model => model.AllowCustomerReviews)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AvailableStartDate ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.AvailableStartDateTimeUtc)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.AvailableStartDateTimeUtc)
+                            @Html.NopLabelFor(model => model.AvailableStartDateTimeUtc)
                             @Html.ValidationMessageFor(model => model.AvailableStartDateTimeUtc)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AvailableEndDate ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.AvailableEndDateTimeUtc)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.AvailableEndDateTimeUtc)
+                            @Html.NopLabelFor(model => model.AvailableEndDateTimeUtc)
                             @Html.ValidationMessageFor(model => model.AvailableEndDateTimeUtc)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.MarkAsNew ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.MarkAsNew)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.MarkAsNew)
+                            @Html.NopLabelFor(model => model.MarkAsNew)
                             @Html.ValidationMessageFor(model => model.MarkAsNew)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.MarkAsNewStartDate ? null : "advanced-setting")" id="pnlMarkAsNewStartDateTimeUtc">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.MarkAsNewStartDateTimeUtc)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.MarkAsNewStartDateTimeUtc)
+                            @Html.NopLabelFor(model => model.MarkAsNewStartDateTimeUtc)
                             @Html.ValidationMessageFor(model => model.MarkAsNewStartDateTimeUtc)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.MarkAsNewEndDate ? null : "advanced-setting")" id="pnlMarkAsNewEndDateTimeUtc">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.MarkAsNewEndDateTimeUtc)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.MarkAsNewEndDateTimeUtc)
+                            @Html.NopLabelFor(model => model.MarkAsNewEndDateTimeUtc)
                             @Html.ValidationMessageFor(model => model.MarkAsNewEndDateTimeUtc)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AdminComment ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.AdminComment)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopTextAreaFor(model => model.AdminComment)
+                            @Html.NopLabelFor(model => model.AdminComment)
                             @Html.ValidationMessageFor(model => model.AdminComment)
                         </div>
                     </div>
@@ -732,29 +684,23 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.IsGiftCard)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.IsGiftCard)
+                            @Html.NopLabelFor(model => model.IsGiftCard)
                             @Html.ValidationMessageFor(model => model.IsGiftCard)
                         </div>
                     </div>
                     <div class="form-group" id="pnlGiftCardType">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.GiftCardTypeId)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopDropDownListFor(model => model.GiftCardTypeId, ((GiftCardType)Model.GiftCardTypeId).ToSelectList())
+                            @Html.NopLabelFor(model => model.GiftCardTypeId)
                             @Html.ValidationMessageFor(model => model.GiftCardTypeId)
                         </div>
                     </div>
                     <div class="form-group" id="pnlOverriddenGiftCardAmount">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.OverriddenGiftCardAmount)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.OverriddenGiftCardAmount)
+                            @Html.NopLabelFor(model => model.OverriddenGiftCardAmount)
                             @Html.ValidationMessageFor(model => model.OverriddenGiftCardAmount)
                         </div>
                     </div>
@@ -766,92 +712,74 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.IsDownload)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.IsDownload)
+                            @Html.NopLabelFor(model => model.IsDownload)
                             @Html.ValidationMessageFor(model => model.IsDownload)
                         </div>
                     </div>
                     <div class="form-group" id="pnlDownloadFile">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.DownloadId)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.DownloadId)
+                            @Html.NopLabelFor(model => model.DownloadId)
                             @Html.ValidationMessageFor(model => model.DownloadId)
                         </div>
                     </div>
                     <div class="form-group" id="pnlUnlimitedDownloads">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.UnlimitedDownloads)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.UnlimitedDownloads)
+                            @Html.NopLabelFor(model => model.UnlimitedDownloads)
                             @Html.ValidationMessageFor(model => model.UnlimitedDownloads)
                         </div>
                     </div>
                     <div class="form-group" id="pnlMaxNumberOfDownloads">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.MaxNumberOfDownloads)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.MaxNumberOfDownloads)
+                            @Html.NopLabelFor(model => model.MaxNumberOfDownloads)
                             @Html.ValidationMessageFor(model => model.MaxNumberOfDownloads)
                         </div>
                     </div>
                     <div class="form-group" id="pnlDownloadExpirationDays">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.DownloadExpirationDays)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.DownloadExpirationDays)
+                            @Html.NopLabelFor(model => model.DownloadExpirationDays)
                             @Html.ValidationMessageFor(model => model.DownloadExpirationDays)
                         </div>
                     </div>
                     <div class="form-group" id="pnlDownloadActivationType">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.DownloadActivationTypeId)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopDropDownListFor(model => model.DownloadActivationTypeId, ((DownloadActivationType)Model.DownloadActivationTypeId).ToSelectList())
+                            @Html.NopLabelFor(model => model.DownloadActivationTypeId)
                             @Html.ValidationMessageFor(model => model.DownloadActivationTypeId)
                         </div>
                     </div>
                     <div class="form-group" id="pnlHasUserAgreement">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.HasUserAgreement)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.HasUserAgreement)
+                            @Html.NopLabelFor(model => model.HasUserAgreement)
                             @Html.ValidationMessageFor(model => model.HasUserAgreement)
                         </div>
                     </div>
                     <div class="form-group" id="pnlUserAgreementText">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.UserAgreementText)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopTextAreaFor(model => model.UserAgreementText)
+                            @Html.NopLabelFor(model => model.UserAgreementText)
                             @Html.ValidationMessageFor(model => model.UserAgreementText)
                         </div>
                     </div>
                     <div class="form-group" id="pnlHasSampleDownload">
                         <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.HasSampleDownload)
                         </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.HasSampleDownload)
+                            @Html.NopLabelFor(model => model.HasSampleDownload)
                             @Html.ValidationMessageFor(model => model.HasSampleDownload)
                         </div>
                     </div>
                     <div class="form-group" id="pnlSampleDownloadFile">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.SampleDownloadId)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.SampleDownloadId)
+                            @Html.NopLabelFor(model => model.SampleDownloadId)
                             @Html.ValidationMessageFor(model => model.SampleDownloadId)
                         </div>
                     </div>
@@ -863,38 +791,30 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.IsRecurring)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.IsRecurring)
+                            @Html.NopLabelFor(model => model.IsRecurring)
                             @Html.ValidationMessageFor(model => model.IsRecurring)
                         </div>
                     </div>
                     <div class="form-group" id="pnlCycleLength">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.RecurringCycleLength)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.RecurringCycleLength)
+                            @Html.NopLabelFor(model => model.RecurringCycleLength)
                             @Html.ValidationMessageFor(model => model.RecurringCycleLength)
                         </div>
                     </div>
                     <div class="form-group" id="pnlCyclePeriod">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.RecurringCyclePeriodId)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopDropDownListFor(model => model.RecurringCyclePeriodId, ((RecurringProductCyclePeriod)Model.RecurringCyclePeriodId).ToSelectList())
+                            @Html.NopLabelFor(model => model.RecurringCyclePeriodId)
                             @Html.ValidationMessageFor(model => model.RecurringCyclePeriodId)
                         </div>
                     </div>
                     <div class="form-group" id="pnlTotalCycles">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.RecurringTotalCycles)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.RecurringTotalCycles)
+                            @Html.NopLabelFor(model => model.RecurringTotalCycles)
                             @Html.ValidationMessageFor(model => model.RecurringTotalCycles)
                         </div>
                     </div>
@@ -906,29 +826,23 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.IsRental)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.IsRental)
+                            @Html.NopLabelFor(model => model.IsRental)
                             @Html.ValidationMessageFor(model => model.IsRental)
                         </div>
                     </div>
                     <div class="form-group" id="pnlRentalPriceLength">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.RentalPriceLength)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.RentalPriceLength)
+                            @Html.NopLabelFor(model => model.RentalPriceLength)
                             @Html.ValidationMessageFor(model => model.RentalPriceLength)
                         </div>
                     </div>
                     <div class="form-group" id="pnlRentalPricePeriod">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.RentalPricePeriodId)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopDropDownListFor(model => model.RentalPricePeriodId, ((RentalPricePeriod)Model.RentalPricePeriodId).ToSelectList())
+                            @Html.NopLabelFor(model => model.RentalPricePeriodId)
                             @Html.ValidationMessageFor(model => model.RentalPricePeriodId)
                         </div>
                     </div>
@@ -940,155 +854,121 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.Price)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.Price, Model.PrimaryStoreCurrencyCode)
+                            @Html.NopLabelFor(model => model.Price)
                             @Html.ValidationMessageFor(model => model.Price)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.OldPrice ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.OldPrice)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.OldPrice, Model.PrimaryStoreCurrencyCode)
+                            @Html.NopLabelFor(model => model.OldPrice)
                             @Html.ValidationMessageFor(model => model.OldPrice)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.ProductCost ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.ProductCost)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.ProductCost, Model.PrimaryStoreCurrencyCode)
+                            @Html.NopLabelFor(model => model.ProductCost)
                             @Html.ValidationMessageFor(model => model.ProductCost)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.DisableBuyButton ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.DisableBuyButton)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.DisableBuyButton)
+                            @Html.NopLabelFor(model => model.DisableBuyButton)
                             @Html.ValidationMessageFor(model => model.DisableBuyButton)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.DisableWishlistButton ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.DisableWishlistButton)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.DisableWishlistButton)
+                            @Html.NopLabelFor(model => model.DisableWishlistButton)
                             @Html.ValidationMessageFor(model => model.DisableWishlistButton)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AvailableForPreOrder ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.AvailableForPreOrder)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.AvailableForPreOrder)
+                            @Html.NopLabelFor(model => model.AvailableForPreOrder)
                             @Html.ValidationMessageFor(model => model.AvailableForPreOrder)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AvailableForPreOrder ? null : "advanced-setting")" id="pnlPreOrderAvailabilityStartDateTimeUtc">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.PreOrderAvailabilityStartDateTimeUtc)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.PreOrderAvailabilityStartDateTimeUtc)
+                            @Html.NopLabelFor(model => model.PreOrderAvailabilityStartDateTimeUtc)
                             @Html.ValidationMessageFor(model => model.PreOrderAvailabilityStartDateTimeUtc)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.CallForPrice ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.CallForPrice)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.CallForPrice)
+                            @Html.NopLabelFor(model => model.CallForPrice)
                             @Html.ValidationMessageFor(model => model.CallForPrice)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.CustomerEntersPrice ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.CustomerEntersPrice)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.CustomerEntersPrice)
+                            @Html.NopLabelFor(model => model.CustomerEntersPrice)
                             @Html.ValidationMessageFor(model => model.CustomerEntersPrice)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.CustomerEntersPrice ? null : "advanced-setting")" id="pnlMinimumCustomerEnteredPrice">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.MinimumCustomerEnteredPrice)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.MinimumCustomerEnteredPrice, Model.PrimaryStoreCurrencyCode)
+                            @Html.NopLabelFor(model => model.MinimumCustomerEnteredPrice)
                             @Html.ValidationMessageFor(model => model.MinimumCustomerEnteredPrice)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.CustomerEntersPrice ? null : "advanced-setting")" id="pnlMaximumCustomerEnteredPrice">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.MaximumCustomerEnteredPrice)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.MaximumCustomerEnteredPrice, Model.PrimaryStoreCurrencyCode)
+                            @Html.NopLabelFor(model => model.MaximumCustomerEnteredPrice)
                             @Html.ValidationMessageFor(model => model.MaximumCustomerEnteredPrice)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.PAngV ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.BasepriceEnabled)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.BasepriceEnabled)
+                            @Html.NopLabelFor(model => model.BasepriceEnabled)
                             @Html.ValidationMessageFor(model => model.BasepriceEnabled)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.PAngV ? null : "advanced-setting")" id="pnlBasepriceAmount">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.BasepriceAmount)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.BasepriceAmount)
+                            @Html.NopLabelFor(model => model.BasepriceAmount)
                             @Html.ValidationMessageFor(model => model.BasepriceAmount)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.PAngV ? null : "advanced-setting")" id="pnlBasepriceUnit">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.BasepriceUnitId)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopDropDownListFor(model => model.BasepriceUnitId, Model.AvailableBasepriceUnits)
+                            @Html.NopLabelFor(model => model.BasepriceUnitId)
                             @Html.ValidationMessageFor(model => model.BasepriceUnitId)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.PAngV ? null : "advanced-setting")" id="pnlBasepriceBaseAmount">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.BasepriceBaseAmount)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.BasepriceBaseAmount)
+                            @Html.NopLabelFor(model => model.BasepriceBaseAmount)
                             @Html.ValidationMessageFor(model => model.BasepriceBaseAmount)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.PAngV ? null : "advanced-setting")" id="pnlBasepriceBaseUnit">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.BasepriceBaseUnitId)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopDropDownListFor(model => model.BasepriceBaseUnitId, Model.AvailableBasepriceBaseUnits)
+                            @Html.NopLabelFor(model => model.BasepriceBaseUnitId)
                             @Html.ValidationMessageFor(model => model.BasepriceBaseUnitId)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.Discounts ? null : "advanced-setting")">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.SelectedDiscountIds)
-                        </div>
                         <div class="col-md-9">
                             @Html.EditorFor(model => model.SelectedDiscountIds, new { SelectList = Model.AvailableDiscounts })
+                            @Html.NopLabelFor(model => model.SelectedDiscountIds)
                             <script>
                                 $(document).ready(function() {
                                     var discountsIdsInput = $('#@Html.FieldIdFor(model => model.SelectedDiscountIds)').data("kendoMultiSelect");
@@ -1112,29 +992,23 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.IsTaxExempt)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.IsTaxExempt)
+                            @Html.NopLabelFor(model => model.IsTaxExempt)
                             @Html.ValidationMessageFor(model => model.IsTaxExempt)
                         </div>
                     </div>
                     <div class="form-group" id="pnlTaxCategory">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.TaxCategoryId)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopDropDownListFor(model => model.TaxCategoryId, Model.AvailableTaxCategories)
+                            @Html.NopLabelFor(model => model.TaxCategoryId)
                             @Html.ValidationMessageFor(model => model.TaxCategoryId)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.TelecommunicationsBroadcastingElectronicServices ? null : "advanced-setting")" id="pnlIsTelecommunicationsOrBroadcastingOrElectronicServices">
-                        <div class="col-md-3">
-                            @Html.NopLabelFor(model => model.IsTelecommunicationsOrBroadcastingOrElectronicServices)
-                        </div>
                         <div class="col-md-9">
                             @Html.NopEditorFor(model => model.IsTelecommunicationsOrBroadcastingOrElectronicServices)
+                            @Html.NopLabelFor(model => model.IsTelecommunicationsOrBroadcastingOrElectronicServices)
                             @Html.ValidationMessageFor(model => model.IsTelecommunicationsOrBroadcastingOrElectronicServices)
                         </div>
                     </div>
@@ -1282,7 +1156,7 @@
         <div class="panel-group">
             @{
                 var leftColumnClass = Model.ProductEditorSettingsModel.OneColumnProductPage ? "col-md-3" : "col-md-4";
-                var rightColumnClass = Model.ProductEditorSettingsModel.OneColumnProductPage ? "col-md-9" : "col-md-8";
+                var rightColumnClass = Model.ProductEditorSettingsModel.OneColumnProductPage ? "col-md-9" : "col-md-12";
             }
 
             <div class="panel panel-default margin-bottom" id="group-associated-products">
@@ -1432,46 +1306,38 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.ManageInventoryMethodId)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopDropDownListFor(model => model.ManageInventoryMethodId, ((ManageInventoryMethod)Model.ManageInventoryMethodId).ToSelectList())
+                            @Html.NopLabelFor(model => model.ManageInventoryMethodId)
                             @Html.ValidationMessageFor(model => model.ManageInventoryMethodId)
                         </div>
                     </div>
                     <div class="form-group" id="pnlStockQuantity">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.StockQuantity)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.StockQuantity)
+                            @Html.NopLabelFor(model => model.StockQuantity)
                             @Html.HiddenFor(model => model.LastStockQuantity)
                             @Html.ValidationMessageFor(model => model.StockQuantity)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.Warehouse ? null : "advanced-setting")" id="pnlWarehouse">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.WarehouseId)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopDropDownListFor(model => model.WarehouseId, Model.AvailableWarehouses)
+                            @Html.NopLabelFor(model => model.WarehouseId)
                             @Html.ValidationMessageFor(model => model.WarehouseId)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.UseMultipleWarehouses ? null : "advanced-setting")" id="pnlUseMultipleWarehouses">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.UseMultipleWarehouses)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.UseMultipleWarehouses)
+                            @Html.NopLabelFor(model => model.UseMultipleWarehouses)
                             @Html.ValidationMessageFor(model => model.UseMultipleWarehouses)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.UseMultipleWarehouses ? null : "advanced-setting")" id="pnlMultipleWarehouses">
                         <div class="col-md-12" style="overflow-x: auto;">
                             @if (Model.ProductWarehouseInventoryModels.Count > 0)
-            {
+                            {
                                 <table class="table table-hover table-bordered text-center">
                                     <thead>
                                         <tr>
@@ -1550,119 +1416,95 @@
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.DisplayStockAvailability ? null : "advanced-setting")" id="pnlDisplayStockAvailability">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.DisplayStockAvailability)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.DisplayStockAvailability)
+                            @Html.NopLabelFor(model => model.DisplayStockAvailability)
                             @Html.ValidationMessageFor(model => model.DisplayStockAvailability)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.DisplayStockQuantity ? null : "advanced-setting")" id="pnlDisplayStockQuantity">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.DisplayStockQuantity)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.DisplayStockQuantity)
+                            @Html.NopLabelFor(model => model.DisplayStockQuantity)
                             @Html.ValidationMessageFor(model => model.DisplayStockQuantity)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.MinimumStockQuantity ? null : "advanced-setting")" id="pnlMinStockQuantity">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.MinStockQuantity)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.MinStockQuantity)
+                            @Html.NopLabelFor(model => model.MinStockQuantity)
                             @Html.ValidationMessageFor(model => model.MinStockQuantity)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.LowStockActivity ? null : "advanced-setting")" id="pnlLowStockActivity">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.LowStockActivityId)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopDropDownListFor(model => model.LowStockActivityId, ((LowStockActivity)Model.LowStockActivityId).ToSelectList())
+                            @Html.NopLabelFor(model => model.LowStockActivityId)
                             @Html.ValidationMessageFor(model => model.LowStockActivityId)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.NotifyAdminForQuantityBelow ? null : "advanced-setting")" id="pnlNotifyForQuantityBelow">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.NotifyAdminForQuantityBelow)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.NotifyAdminForQuantityBelow)
+                            @Html.NopLabelFor(model => model.NotifyAdminForQuantityBelow)
                             @Html.ValidationMessageFor(model => model.NotifyAdminForQuantityBelow)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.Backorders ? null : "advanced-setting")" id="pnlBackorders">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.BackorderModeId)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopDropDownListFor(model => model.BackorderModeId, ((BackorderMode)Model.BackorderModeId).ToSelectList())
+                            @Html.NopLabelFor(model => model.BackorderModeId)
                             @Html.ValidationMessageFor(model => model.BackorderModeId)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AllowBackInStockSubscriptions ? null : "advanced-setting")" id="pnlAllowBackInStockSubscriptions">
                         <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.AllowBackInStockSubscriptions)
                         </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.AllowBackInStockSubscriptions)
+                            @Html.NopLabelFor(model => model.AllowBackInStockSubscriptions)
                             @Html.ValidationMessageFor(model => model.AllowBackInStockSubscriptions)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.ProductAvailabilityRange ? null : "advanced-setting")" id="pnlProductAvailabilityRange">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.ProductAvailabilityRangeId)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopDropDownListFor(model => model.ProductAvailabilityRangeId, Model.AvailableProductAvailabilityRanges)
+                            @Html.NopLabelFor(model => model.ProductAvailabilityRangeId)
                             @Html.ValidationMessageFor(model => model.ProductAvailabilityRangeId)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.MinimumCartQuantity ? null : "advanced-setting")">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.OrderMinimumQuantity)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.OrderMinimumQuantity)
+                            @Html.NopLabelFor(model => model.OrderMinimumQuantity)
                             @Html.ValidationMessageFor(model => model.OrderMinimumQuantity)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.MaximumCartQuantity ? null : "advanced-setting")">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.OrderMaximumQuantity)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.OrderMaximumQuantity)
+                            @Html.NopLabelFor(model => model.OrderMaximumQuantity)
                             @Html.ValidationMessageFor(model => model.OrderMaximumQuantity)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AllowedQuantities ? null : "advanced-setting")">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.AllowedQuantities)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.AllowedQuantities)
+                            @Html.NopLabelFor(model => model.AllowedQuantities)
                             @Html.ValidationMessageFor(model => model.AllowedQuantities)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AllowAddingOnlyExistingAttributeCombinations ? null : "advanced-setting")" id="pnlAllowAddingOnlyExistingAttributeCombinations">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.AllowAddingOnlyExistingAttributeCombinations)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.AllowAddingOnlyExistingAttributeCombinations)
+                            @Html.NopLabelFor(model => model.AllowAddingOnlyExistingAttributeCombinations)
                             @Html.ValidationMessageFor(model => model.AllowAddingOnlyExistingAttributeCombinations)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.NotReturnable ? null : "advanced-setting")">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.NotReturnable)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.NotReturnable)
+                            @Html.NopLabelFor(model => model.NotReturnable)
                             @Html.ValidationMessageFor(model => model.NotReturnable)
                         </div>
                     </div>
@@ -1674,83 +1516,65 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.IsShipEnabled)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.IsShipEnabled)
+                            @Html.NopLabelFor(model => model.IsShipEnabled)
                             @Html.ValidationMessageFor(model => model.IsShipEnabled)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.Weight ? null : "advanced-setting")" id="pnlWeight">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.Weight)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.Weight, Model.BaseWeightIn)
+                            @Html.NopLabelFor(model => model.Weight)
                             @Html.ValidationMessageFor(model => model.Weight)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.Dimensions ? null : "advanced-setting")" id="pnlLength">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.Length)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.Length, Model.BaseDimensionIn)
+                            @Html.NopLabelFor(model => model.Length)
                             @Html.ValidationMessageFor(model => model.Length)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.Dimensions ? null : "advanced-setting")" id="pnlWidth">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.Width)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.Width, Model.BaseDimensionIn)
+                            @Html.NopLabelFor(model => model.Width)
                             @Html.ValidationMessageFor(model => model.Width)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.Dimensions ? null : "advanced-setting")" id="pnlHeight">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.Height)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.Height, Model.BaseDimensionIn)
+                            @Html.NopLabelFor(model => model.Height)
                             @Html.ValidationMessageFor(model => model.Height)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.FreeShipping ? null : "advanced-setting")" id="pnlFreeShipping">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.IsFreeShipping)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.IsFreeShipping)
+                            @Html.NopLabelFor(model => model.IsFreeShipping)
                             @Html.ValidationMessageFor(model => model.IsFreeShipping)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.ShipSeparately ? null : "advanced-setting")" id="pnlShipSeparately">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.ShipSeparately)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.ShipSeparately)
+                            @Html.NopLabelFor(model => model.ShipSeparately)
                             @Html.ValidationMessageFor(model => model.ShipSeparately)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AdditionalShippingCharge ? null : "advanced-setting")" id="pnlAdditionalShippingCharge">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.AdditionalShippingCharge)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.AdditionalShippingCharge, Model.PrimaryStoreCurrencyCode)
+                            @Html.NopLabelFor(model => model.AdditionalShippingCharge)
                             @Html.ValidationMessageFor(model => model.AdditionalShippingCharge)
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.DeliveryDate ? null : "advanced-setting")" id="pnlDeliveryDate">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.DeliveryDateId)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopDropDownListFor(model => model.DeliveryDateId, Model.AvailableDeliveryDates)
+                            @Html.NopLabelFor(model => model.DeliveryDateId)
                             @Html.ValidationMessageFor(model => model.DeliveryDateId)
                         </div>
                     </div>
@@ -1762,11 +1586,9 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.SelectedCategoryIds)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.EditorFor(model => model.SelectedCategoryIds, new { SelectList = Model.AvailableCategories })
+                            @Html.NopLabelFor(model => model.SelectedCategoryIds)
                             <script>
                                 $(document).ready(function() {
                                     var categoryIdsInput = $('#@Html.FieldIdFor(model => model.SelectedCategoryIds)').data("kendoMultiSelect");
@@ -1790,10 +1612,8 @@
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.Manufacturers ? null : "advanced-setting")">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.SelectedManufacturerIds)
-                        </div>
                         <div class="@rightColumnClass">
+                            @Html.NopLabelFor(model => model.SelectedManufacturerIds)
                             @Html.EditorFor(model => model.SelectedManufacturerIds, new { SelectList = Model.AvailableManufacturers })
                             <script>
                                 $(document).ready(function() {
@@ -1818,10 +1638,8 @@
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.Stores ? null : "advanced-setting")">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.SelectedStoreIds)
-                        </div>
                         <div class="@rightColumnClass">
+                            @Html.NopLabelFor(model => model.SelectedStoreIds)
                             @Html.EditorFor(model => model.SelectedStoreIds, new { SelectList = Model.AvailableStores })
                             <script>
                                 $(document).ready(function() {
@@ -1846,11 +1664,9 @@
                         </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.Vendor ? null : "advanced-setting")" @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.VendorId)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopDropDownListFor(model => model.VendorId, Model.AvailableVendors)
+                            @Html.NopLabelFor(model => model.VendorId)
                             @Html.ValidationMessageFor(model => model.VendorId)
                         </div>
                     </div>
@@ -1862,11 +1678,9 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.SelectedCustomerRoleIds)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.EditorFor(model => model.SelectedCustomerRoleIds, new { SelectList = Model.AvailableCustomerRoles })
+                            @Html.NopLabelFor(model => model.SelectedCustomerRoleIds)
                             <script>
                                 $(document).ready(function() {
                                     var rolesIdsInput = $('#@Html.FieldIdFor(model => model.SelectedCustomerRoleIds)').data("kendoMultiSelect");
@@ -1897,22 +1711,18 @@
                 </div>
                 <div class="panel-body">
                     <div class="form-group">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.RequireOtherProducts)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.RequireOtherProducts)
+                            @Html.NopLabelFor(model => model.RequireOtherProducts)
                             @Html.ValidationMessageFor(model => model.RequireOtherProducts)
                         </div>
                     </div>
                     <div id="pnlRequiredProductIds">
                         <div class="form-group">
-                            <div class="@leftColumnClass">
-                                @Html.NopLabelFor(model => model.RequiredProductIds)
-                            </div>
                             <div class="@rightColumnClass">
                                 <div class="input-group">
                                     @Html.NopEditorFor(model => model.RequiredProductIds)
+                                    @Html.NopLabelFor(model => model.RequiredProductIds)
                                     <span class="input-group-btn">
                                         <input type="submit" id="btnRefreshRequiredProducts" style="display: none" />
                                         <script type="text/javascript">
@@ -1944,11 +1754,9 @@
                         </div>
                     </div>
                     <div class="form-group" id="pnlAutomaticallyAddRequiredProducts">
-                        <div class="@leftColumnClass">
-                            @Html.NopLabelFor(model => model.AutomaticallyAddRequiredProducts)
-                        </div>
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.AutomaticallyAddRequiredProducts)
+                            @Html.NopLabelFor(model => model.AutomaticallyAddRequiredProducts)
                             @Html.ValidationMessageFor(model => model.AutomaticallyAddRequiredProducts)
                         </div>
                     </div>
