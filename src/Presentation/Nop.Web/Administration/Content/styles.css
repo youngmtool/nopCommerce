@@ -455,6 +455,7 @@ td.k-state-focused.k-state-selected {
 }
 .k-multiselect-wrap {
     min-height: 34px;
+    padding-top: 10px;
 }
 .k-multiselect-wrap>.k-input {
     height: 28px;
@@ -760,47 +761,58 @@ td.k-state-focused.k-state-selected {
 
 /* FORM ELEMENTS */
 .form-horizontal .label-wrapper {
-    display: table;
 }
 .form-horizontal .label-wrapper .control-label {
-    display: table-cell;
     padding-top: 0;
     color: #0b6ea7;
+    display: block;
+    float: left;
 }
 .form-horizontal .label-wrapper .ico-help {
-    display: table-cell;
-    color: #3c8dbc;
-    font-size: 1.17em;
-    padding-left: 6px;
-    display: none;
+    color: #adadad;
+    font-size: 1.1em;
+    margin-left: 7px;
+    float: left;
 }
-.form-control{
+.form-control {
     padding: 10px 12px;
     height: 46px;
 }
-.form-group .label-wrapper{
+.form-group .label-wrapper {
+    float: left;
+    margin-left: 18px;
+}
+.form-control + .label-wrapper,
+.form-control + script + .label-wrapper,
+.input-group + .label-wrapper,
+.input-group + script + .label-wrapper,
+.k-widget + .label-wrapper,
+.k-widget + script + .label-wrapper,
+textarea.form-control + .label-wrapper, 
+.mce-tinymce + textarea + .label-wrapper {
+    background: #fff;
+    padding: 0 3px 0 5px;
+    margin-left: 12px;
     position: absolute;
     z-index: 10;
-    background: #fff;
-    margin-top: -56px;
-    padding: 0 3px;
-    margin-left: 10px;
 }
-textarea.form-control + .label-wrapper, .mce-tinymce + textarea + .label-wrapper {
+.form-control + .label-wrapper,
+.form-control + script + .label-wrapper,
+.input-group + .label-wrapper,
+.input-group + script + .label-wrapper,
+.k-widget + .label-wrapper,
+.k-widget + script + .label-wrapper {
+    margin-top: -56px;
+}
+textarea.form-control + .label-wrapper, 
+.mce-tinymce + textarea + .label-wrapper {
     top: 0;
     margin-top: -10px;
 }
 input[type=checkbox] + .label-wrapper,
-input[type=checkbox] + input + .label-wrapper{
-    margin-top: -23px;
-    margin-left: 20px;
-}
+input[type=checkbox] + input + .label-wrapper{margin-left: 5px;}
 .form-horizontal .label-wrapper i.fa {
     width: 16px;
-}
-.form-horizontal .label-wrapper i.fa:before {
-    position: absolute;
-    top: 9px;
 }
 .form-horizontal span.required {
     color: #ff2e2e;
@@ -812,7 +824,7 @@ input[type=checkbox] + input + .label-wrapper{
     margin-bottom: 20px;
     position: relative;
 }
-.form-group input[type=checkbox] {margin-top: 0px;}
+.form-group input[type=checkbox] {float: left;margin-top: 4px;}
 .form-group .checkbox input[type=checkbox] {
     margin-top: 3px;
 }
@@ -890,9 +902,7 @@ padding: 0px 3px;
     
 margin-left: 8px;
 }
-.form-text-row {
-    padding-top: 6px;
-}
+.form-text-row {float: left;}
 .btn-search {
     margin-top: 10px;
     min-width: 150px;
@@ -996,6 +1006,10 @@ input[type=file].form-control {
 
 .mce-container label {
     max-width: inherit;
+}
+
+.mce-tinymce.mce-container {
+    padding-top: 5px !important;
 }
 
 /* TABLES */
