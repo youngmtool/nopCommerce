@@ -1284,6 +1284,21 @@ span.grid-report-item.red {
     right: 0px; 
 }
 
+/*nested setting*/
+.form-group + .nested-setting {    
+    padding-left: 20px;    
+}
+.form-group + .nested-setting:before {
+    border-left: 1px dashed #8a8a8a;
+    border-bottom: 1px dashed #8a8a8a;
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 62px;
+    display: block;
+    margin-top: -40px;
+}
+
 /*bootstrap touchspin*/
 .bootstrap-touchspin {
     width: 100%;

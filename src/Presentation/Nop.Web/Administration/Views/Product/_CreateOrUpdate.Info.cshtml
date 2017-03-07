@@ -463,14 +463,14 @@
                 </div>
                 <div class="panel-body">
                     @if (Model.Id > 0)
-                        {
+                    {
                         <div class="form-group @(Model.ProductEditorSettingsModel.Id ? null : "advanced-setting")">
                             <div class="col-md-12">
                                 @Html.NopLabelFor(model => model.Id)
                                 @Html.NopDisplayFor(model => model.Id)
                             </div>
                         </div>
-                        }
+                    }
                     <div class="form-group @(Model.ProductEditorSettingsModel.ProductType ? null : "advanced-setting")">
                         <div class="col-md-12">
                             @Html.NopDropDownListFor(model => model.ProductTypeId, ((ProductType)Model.ProductTypeId).ToSelectList())
@@ -479,7 +479,7 @@
                         </div>
                     </div>
                     @if (Model.Id > 0 && Model.AssociatedToProductId > 0)
-                        {
+                    {
                         <div class="form-group @(Model.ProductEditorSettingsModel.ProductType ? null : "advanced-setting")">
                             <div class="col-md-12">
                                 @Html.NopLabelFor(model => model.AssociatedToProductId)
@@ -489,7 +489,7 @@
                            }, new { })
                             </div>
                         </div>
-                        }
+                    }
                     <div class="form-group @(Model.ProductEditorSettingsModel.ProductTemplate ? null : "advanced-setting")" @(Model.AvailableProductTemplates.SelectionIsNotPossible() ? Html.Raw("style=\"display:none\"") : null) id="pnlProductTemplateId">
                         <div class="col-md-12">
                             @Html.NopDropDownListFor(model => model.ProductTemplateId, Model.AvailableProductTemplates)
@@ -506,30 +506,30 @@
                     </div>
 
                     @(Html.LocalizedEditor<ProductModel, ProductLocalizedModel>("product-info-localized",
-                        @<div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    @Html.NopEditorFor(model => model.Locales[item].Name)
-                                    @Html.NopLabelFor(model => model.Locales[item].Name)
-                                    @Html.ValidationMessageFor(model => model.Locales[item].Name)
-                                </div>
+                    @<div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                @Html.NopEditorFor(model => model.Locales[item].Name)
+                                @Html.NopLabelFor(model => model.Locales[item].Name)
+                                @Html.ValidationMessageFor(model => model.Locales[item].Name)
                             </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    @Html.NopTextAreaFor(model => model.Locales[item].ShortDescription)
-                                    @Html.NopLabelFor(model => model.Locales[item].ShortDescription)
-                                    @Html.ValidationMessageFor(model => model.Locales[item].ShortDescription)
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    @Html.EditorFor(model => model.Locales[item].FullDescription, "RichEditor")
-                                    @Html.NopLabelFor(model => model.Locales[item].FullDescription)
-                                    @Html.ValidationMessageFor(model => model.Locales[item].FullDescription)
-                                </div>
-                            </div>
-                            @Html.HiddenFor(model => model.Locales[item].LanguageId)
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                @Html.NopTextAreaFor(model => model.Locales[item].ShortDescription)
+                                @Html.NopLabelFor(model => model.Locales[item].ShortDescription)
+                                @Html.ValidationMessageFor(model => model.Locales[item].ShortDescription)
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                @Html.EditorFor(model => model.Locales[item].FullDescription, "RichEditor")
+                                @Html.NopLabelFor(model => model.Locales[item].FullDescription)
+                                @Html.ValidationMessageFor(model => model.Locales[item].FullDescription)
+                            </div>
+                        </div>
+                        @Html.HiddenFor(model => model.Locales[item].LanguageId)
+                    </div>
                             ,@<div>
                             <div class="form-group">
                                 <div class="col-md-12">
@@ -596,12 +596,12 @@
                             @Html.ValidationMessageFor(model => model.ShowOnHomePage)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.DisplayOrder ? null : "advanced-setting")" id="pnlDisplayOrder" @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
-                        <div class="col-md-12">
-                            @Html.NopEditorFor(model => model.DisplayOrder)
-                            @Html.NopLabelFor(model => model.DisplayOrder)
-                            @Html.ValidationMessageFor(model => model.DisplayOrder)
-                        </div>
+                        <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.DisplayOrder ? null : "advanced-setting")" id="pnlDisplayOrder" @(Model.IsLoggedInAsVendor ? Html.Raw("style='display: none;'") : null)>
+                            <div class="col-md-12">
+                                @Html.NopEditorFor(model => model.DisplayOrder)
+                                @Html.NopLabelFor(model => model.DisplayOrder)
+                                @Html.ValidationMessageFor(model => model.DisplayOrder)
+                            </div>
                     </div>
                     <div class="form-group @(Model.ProductEditorSettingsModel.AllowCustomerReviews ? null : "advanced-setting")">
                         <div class="col-md-12">
@@ -653,23 +653,23 @@
                         </div>
                     </div>
                     @if (Model.CreatedOn.HasValue)
-                        {
+                    {
                         <div class="form-group @(Model.ProductEditorSettingsModel.CreatedOn ? null : "advanced-setting")">
                             <div class="col-md-12">
                                 @Html.NopLabelFor(model => model.CreatedOn)
                                 @Html.NopDisplay(Model.CreatedOn.Value.ToString("F"))
                             </div>
                         </div>
-                        }
+                    }
                     @if (Model.UpdatedOn.HasValue)
-                        {
+                    {
                         <div class="form-group @(Model.ProductEditorSettingsModel.UpdatedOn ? null : "advanced-setting")">
                             <div class="col-md-12">
                                 @Html.NopLabelFor(model => model.UpdatedOn)
                                 @Html.NopDisplay(Model.UpdatedOn.Value.ToString("F"))
                             </div>
                         </div>
-                        }
+                    }
                 </div>
             </div>
             <div class="panel panel-default @(Model.ProductEditorSettingsModel.IsGiftCard ? null : "advanced-setting")" id="group-giftcard">
@@ -684,14 +684,14 @@
                             @Html.ValidationMessageFor(model => model.IsGiftCard)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlGiftCardType">
+                    <div class="form-group nested-setting" id="pnlGiftCardType">
                         <div class="col-md-12">
                             @Html.NopDropDownListFor(model => model.GiftCardTypeId, ((GiftCardType)Model.GiftCardTypeId).ToSelectList())
                             @Html.NopLabelFor(model => model.GiftCardTypeId)
                             @Html.ValidationMessageFor(model => model.GiftCardTypeId)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlOverriddenGiftCardAmount">
+                    <div class="form-group nested-setting" id="pnlOverriddenGiftCardAmount">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.OverriddenGiftCardAmount)
                             @Html.NopLabelFor(model => model.OverriddenGiftCardAmount)
@@ -712,65 +712,63 @@
                             @Html.ValidationMessageFor(model => model.IsDownload)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlDownloadFile">
+                    <div class="form-group nested-setting" id="pnlDownloadFile">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.DownloadId)
                             @Html.NopLabelFor(model => model.DownloadId)
                             @Html.ValidationMessageFor(model => model.DownloadId)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlUnlimitedDownloads">
+                    <div class="form-group nested-setting" id="pnlUnlimitedDownloads">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.UnlimitedDownloads)
                             @Html.NopLabelFor(model => model.UnlimitedDownloads)
                             @Html.ValidationMessageFor(model => model.UnlimitedDownloads)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlMaxNumberOfDownloads">
+                    <div class="form-group nested-setting" id="pnlMaxNumberOfDownloads">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.MaxNumberOfDownloads)
                             @Html.NopLabelFor(model => model.MaxNumberOfDownloads)
                             @Html.ValidationMessageFor(model => model.MaxNumberOfDownloads)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlDownloadExpirationDays">
+                    <div class="form-group nested-setting" id="pnlDownloadExpirationDays">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.DownloadExpirationDays)
                             @Html.NopLabelFor(model => model.DownloadExpirationDays)
                             @Html.ValidationMessageFor(model => model.DownloadExpirationDays)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlDownloadActivationType">
+                    <div class="form-group nested-setting" id="pnlDownloadActivationType">
                         <div class="col-md-12">
                             @Html.NopDropDownListFor(model => model.DownloadActivationTypeId, ((DownloadActivationType)Model.DownloadActivationTypeId).ToSelectList())
                             @Html.NopLabelFor(model => model.DownloadActivationTypeId)
                             @Html.ValidationMessageFor(model => model.DownloadActivationTypeId)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlHasUserAgreement">
+                    <div class="form-group nested-setting" id="pnlHasUserAgreement">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.HasUserAgreement)
                             @Html.NopLabelFor(model => model.HasUserAgreement)
                             @Html.ValidationMessageFor(model => model.HasUserAgreement)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlUserAgreementText">
+                    <div class="form-group nested-setting" id="pnlUserAgreementText">
                         <div class="col-md-12">
                             @Html.NopTextAreaFor(model => model.UserAgreementText)
                             @Html.NopLabelFor(model => model.UserAgreementText)
                             @Html.ValidationMessageFor(model => model.UserAgreementText)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlHasSampleDownload">
-                        <div class="col-md-3">
-                        </div>
+                    <div class="form-group nested-setting" id="pnlHasSampleDownload">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.HasSampleDownload)
                             @Html.NopLabelFor(model => model.HasSampleDownload)
                             @Html.ValidationMessageFor(model => model.HasSampleDownload)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlSampleDownloadFile">
+                    <div class="form-group nested-setting" id="pnlSampleDownloadFile">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.SampleDownloadId)
                             @Html.NopLabelFor(model => model.SampleDownloadId)
@@ -791,21 +789,21 @@
                             @Html.ValidationMessageFor(model => model.IsRecurring)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlCycleLength">
+                    <div class="form-group nested-setting" id="pnlCycleLength">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.RecurringCycleLength)
                             @Html.NopLabelFor(model => model.RecurringCycleLength)
                             @Html.ValidationMessageFor(model => model.RecurringCycleLength)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlCyclePeriod">
+                    <div class="form-group nested-setting" id="pnlCyclePeriod">
                         <div class="col-md-12">
                             @Html.NopDropDownListFor(model => model.RecurringCyclePeriodId, ((RecurringProductCyclePeriod)Model.RecurringCyclePeriodId).ToSelectList())
                             @Html.NopLabelFor(model => model.RecurringCyclePeriodId)
                             @Html.ValidationMessageFor(model => model.RecurringCyclePeriodId)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlTotalCycles">
+                    <div class="form-group nested-setting" id="pnlTotalCycles">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.RecurringTotalCycles)
                             @Html.NopLabelFor(model => model.RecurringTotalCycles)
@@ -826,14 +824,14 @@
                             @Html.ValidationMessageFor(model => model.IsRental)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlRentalPriceLength">
+                    <div class="form-group nested-setting nested-setting" id="pnlRentalPriceLength">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.RentalPriceLength)
                             @Html.NopLabelFor(model => model.RentalPriceLength)
                             @Html.ValidationMessageFor(model => model.RentalPriceLength)
                         </div>
                     </div>
-                    <div class="form-group" id="pnlRentalPricePeriod">
+                    <div class="form-group nested-setting nested-setting" id="pnlRentalPricePeriod">
                         <div class="col-md-12">
                             @Html.NopDropDownListFor(model => model.RentalPricePeriodId, ((RentalPricePeriod)Model.RentalPricePeriodId).ToSelectList())
                             @Html.NopLabelFor(model => model.RentalPricePeriodId)
@@ -842,7 +840,7 @@
                     </div>
                 </div>
             </div>
-            <div class="panel panel-default" id="group-prices">
+            <div class="panel panel-default nested-setting" id="group-prices">
                 <div class="panel-heading">
                     @T("Admin.Catalog.Products.Prices")
                 </div>
@@ -889,7 +887,7 @@
                             @Html.ValidationMessageFor(model => model.AvailableForPreOrder)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.AvailableForPreOrder ? null : "advanced-setting")" id="pnlPreOrderAvailabilityStartDateTimeUtc">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.AvailableForPreOrder ? null : "advanced-setting")" id="pnlPreOrderAvailabilityStartDateTimeUtc">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.PreOrderAvailabilityStartDateTimeUtc)
                             @Html.NopLabelFor(model => model.PreOrderAvailabilityStartDateTimeUtc)
@@ -910,14 +908,14 @@
                             @Html.ValidationMessageFor(model => model.CustomerEntersPrice)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.CustomerEntersPrice ? null : "advanced-setting")" id="pnlMinimumCustomerEnteredPrice">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.CustomerEntersPrice ? null : "advanced-setting")" id="pnlMinimumCustomerEnteredPrice">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.MinimumCustomerEnteredPrice, Model.PrimaryStoreCurrencyCode)
                             @Html.NopLabelFor(model => model.MinimumCustomerEnteredPrice)
                             @Html.ValidationMessageFor(model => model.MinimumCustomerEnteredPrice)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.CustomerEntersPrice ? null : "advanced-setting")" id="pnlMaximumCustomerEnteredPrice">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.CustomerEntersPrice ? null : "advanced-setting")" id="pnlMaximumCustomerEnteredPrice">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.MaximumCustomerEnteredPrice, Model.PrimaryStoreCurrencyCode)
                             @Html.NopLabelFor(model => model.MaximumCustomerEnteredPrice)
@@ -931,28 +929,28 @@
                             @Html.ValidationMessageFor(model => model.BasepriceEnabled)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.PAngV ? null : "advanced-setting")" id="pnlBasepriceAmount">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.PAngV ? null : "advanced-setting")" id="pnlBasepriceAmount">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.BasepriceAmount)
                             @Html.NopLabelFor(model => model.BasepriceAmount)
                             @Html.ValidationMessageFor(model => model.BasepriceAmount)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.PAngV ? null : "advanced-setting")" id="pnlBasepriceUnit">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.PAngV ? null : "advanced-setting")" id="pnlBasepriceUnit">
                         <div class="col-md-12">
                             @Html.NopDropDownListFor(model => model.BasepriceUnitId, Model.AvailableBasepriceUnits)
                             @Html.NopLabelFor(model => model.BasepriceUnitId)
                             @Html.ValidationMessageFor(model => model.BasepriceUnitId)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.PAngV ? null : "advanced-setting")" id="pnlBasepriceBaseAmount">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.PAngV ? null : "advanced-setting")" id="pnlBasepriceBaseAmount">
                         <div class="col-md-12">
                             @Html.NopEditorFor(model => model.BasepriceBaseAmount)
                             @Html.NopLabelFor(model => model.BasepriceBaseAmount)
                             @Html.ValidationMessageFor(model => model.BasepriceBaseAmount)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.PAngV ? null : "advanced-setting")" id="pnlBasepriceBaseUnit">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.PAngV ? null : "advanced-setting")" id="pnlBasepriceBaseUnit">
                         <div class="col-md-12">
                             @Html.NopDropDownListFor(model => model.BasepriceBaseUnitId, Model.AvailableBasepriceBaseUnits)
                             @Html.NopLabelFor(model => model.BasepriceBaseUnitId)
@@ -964,24 +962,24 @@
                             @Html.EditorFor(model => model.SelectedDiscountIds, new { SelectList = Model.AvailableDiscounts })
                             @Html.NopLabelFor(model => model.SelectedDiscountIds)
                             <script>
-                                    $(document).ready(function() {
-                                        var discountsIdsInput = $('#@Html.FieldIdFor(model => model.SelectedDiscountIds)').data("kendoMultiSelect");
-                                        discountsIdsInput.setOptions({
-                                            autoClose: false
-                                        });
+                                $(document).ready(function() {
+                                    var discountsIdsInput = $('#@Html.FieldIdFor(model => model.SelectedDiscountIds)').data("kendoMultiSelect");
+                                    discountsIdsInput.setOptions({
+                                        autoClose: false
+                                    });
 
-                                        @if (Model.AvailableDiscounts.Count == 0)
+                                    @if (Model.AvailableDiscounts.Count == 0)
                             {
                                 <text>
-                                        discountsIdsInput.setOptions({
-                                            enable: false,
-                                            placeholder: '@T("Admin.Catalog.Products.Fields.Discounts.NoDiscounts")'
-                                        });
-                                        discountsIdsInput._placeholder();
-                                        discountsIdsInput._enable();
-                                        </text>
-                            }
+                                    discountsIdsInput.setOptions({
+                                        enable: false,
+                                        placeholder: '@T("Admin.Catalog.Products.Fields.Discounts.NoDiscounts")'
                                     });
+                                    discountsIdsInput._placeholder();
+                                    discountsIdsInput._enable();
+                                    </text>
+                            }
+                                });
                             </script>
                         </div>
                     </div>
@@ -1013,7 +1011,7 @@
                     @T("Admin.Catalog.Products.TierPrices")
                 </div>
                 @if (Model.Id > 0)
-                    {
+                {
                     <div class="panel-body">
                         <p>
                             @T("Admin.Catalog.Products.TierPrices.Hint")
@@ -1021,104 +1019,104 @@
                         <div id="tierprices-grid"></div>
 
                         <script>
-                                $(document).ready(function() {
-                                    $("#tierprices-grid").kendoGrid({
-                                        dataSource: {
-                                            type: "json",
-                                            transport: {
-                                                read: {
-                                                    url: "@Html.Raw(Url.Action("TierPriceList", "Product", new {productId = Model.Id}))",
-                                                    type: "POST",
-                                                    dataType: "json",
-                                                    data: addAntiForgeryToken
-                                                },
-                                                destroy: {
-                                                    url: "@Html.Raw(Url.Action("TierPriceDelete", "Product"))",
-                                                    type: "POST",
-                                                    dataType: "json",
-                                                    data: addAntiForgeryToken
-                                                }
+                            $(document).ready(function() {
+                                $("#tierprices-grid").kendoGrid({
+                                    dataSource: {
+                                        type: "json",
+                                        transport: {
+                                            read: {
+                                                url: "@Html.Raw(Url.Action("TierPriceList", "Product", new {productId = Model.Id}))",
+                                                type: "POST",
+                                                dataType: "json",
+                                                data: addAntiForgeryToken
                                             },
-                                            schema: {
-                                                data: "Data",
-                                                total: "Total",
-                                                errors: "Errors",
-                                                model: {
-                                                    id: "Id",
-                                                    fields: {
-                                                        Store: { editable: true, type: "string" },
-                                                        StoreId: { editable: true, type: "number" },
-                                                        CustomerRole: { editable: true, type: "string" },
-                                                        CustomerRoleId: { editable: true, type: "number" },
-                                                        Quantity: { editable: true, type: "number" },
-                                                        Price: { editable: true, type: "number" },
-                                                        StartDateTimeUtc: { editable: true, type: "date" },
-                                                        EndDateTimeUtc: { editable: true, type: "date" },
-                                                        Id: { editable: false, type: "number" }
-                                                    }
-                                                }
-                                            },
-                                            error: function(e) {
-                                                display_kendoui_grid_error(e);
-                                                // Cancel the changes
-                                                this.cancelChanges();
-                                            },
-                                            serverPaging: true,
-                                            serverFiltering: true,
-                                            serverSorting: true
-                                        },
-                                        pageable: {
-                                            refresh: true,
-                                            numeric: false,
-                                            previousNext: false,
-                                            info: false,
-                                            @Html.Partial("_GridPagerMessages")
-                                        },
-                                        editable: {
-                                            confirmation: "@T("Admin.Common.DeleteConfirmation")",
-                                            mode: "inline"
-                                        },
-                                        scrollable: false,
-                                        columns: [
-                                            {
-                                                field: "StoreId",
-                                                hidden: @(stores.Count > 1 ? "false" : "true"),
-                                                title: "@T("Admin.Catalog.Products.TierPrices.Fields.Store")",
-                                                template: "#:Store#"
-                                            }, {
-                                                field: "CustomerRoleId",
-                                                title: "@T("Admin.Catalog.Products.TierPrices.Fields.CustomerRole")",
-                                                template: "#:CustomerRole#"
-                                            }, {
-                                                field: "Quantity",
-                                                title: "@T("Admin.Catalog.Products.TierPrices.Fields.Quantity")",
-                                                format: "{0:0}"
-                                            }, {
-                                                field: "Price",
-                                                title: "@T("Admin.Catalog.Products.TierPrices.Fields.Price")"
-                                            }, {
-                                                field: "StartDateTimeUtc",
-                                                title: "@T("Admin.Catalog.Products.TierPrices.Fields.StartDateTimeUtc")",
-                                                type: "date",
-                                                format: "{0:G}"
-                                            }, {
-                                                field: "EndDateTimeUtc",
-                                                title: "@T("Admin.Catalog.Products.TierPrices.Fields.EndDateTimeUtc")",
-                                                type: "date",
-                                                format: "{0:G}"
-                                            }, {
-                                                field: "Id",
-                                                title: "@T("Admin.Common.Edit")",
-                                                headerAttributes: { style: "text-align:center" },
-                                                attributes: { style: "text-align:center" },
-                                                template: "<button onclick=\"javascript:OpenWindow('@Url.Content("~/Admin/Product/TierPriceEditPopup/")#=Id#?btnId=btnRefreshTierPrices&formId=product-form', 800, 600, true); return false;\" class='btn btn-default'><i class='fa fa-pencil'></i>@T("Admin.Common.Edit")</button>"
-                                            },{
-                                                command: { name: "destroy", text: "@T("Admin.Common.Delete")" },
-                                                title: "@T("Admin.Common.Delete")"
+                                            destroy: {
+                                                url: "@Html.Raw(Url.Action("TierPriceDelete", "Product"))",
+                                                type: "POST",
+                                                dataType: "json",
+                                                data: addAntiForgeryToken
                                             }
-                                        ]
-                                    });
+                                        },
+                                        schema: {
+                                            data: "Data",
+                                            total: "Total",
+                                            errors: "Errors",
+                                            model: {
+                                                id: "Id",
+                                                fields: {
+                                                    Store: { editable: true, type: "string" },
+                                                    StoreId: { editable: true, type: "number" },
+                                                    CustomerRole: { editable: true, type: "string" },
+                                                    CustomerRoleId: { editable: true, type: "number" },
+                                                    Quantity: { editable: true, type: "number" },
+                                                    Price: { editable: true, type: "number" },
+                                                    StartDateTimeUtc: { editable: true, type: "date" },
+                                                    EndDateTimeUtc: { editable: true, type: "date" },
+                                                    Id: { editable: false, type: "number" }
+                                                }
+                                            }
+                                        },
+                                        error: function(e) {
+                                            display_kendoui_grid_error(e);
+                                            // Cancel the changes
+                                            this.cancelChanges();
+                                        },
+                                        serverPaging: true,
+                                        serverFiltering: true,
+                                        serverSorting: true
+                                    },
+                                    pageable: {
+                                        refresh: true,
+                                        numeric: false,
+                                        previousNext: false,
+                                        info: false,
+                                        @Html.Partial("_GridPagerMessages")
+                                    },
+                                    editable: {
+                                        confirmation: "@T("Admin.Common.DeleteConfirmation")",
+                                        mode: "inline"
+                                    },
+                                    scrollable: false,
+                                    columns: [
+                                        {
+                                            field: "StoreId",
+                                            hidden: @(stores.Count > 1 ? "false" : "true"),
+                                            title: "@T("Admin.Catalog.Products.TierPrices.Fields.Store")",
+                                            template: "#:Store#"
+                                        }, {
+                                            field: "CustomerRoleId",
+                                            title: "@T("Admin.Catalog.Products.TierPrices.Fields.CustomerRole")",
+                                            template: "#:CustomerRole#"
+                                        }, {
+                                            field: "Quantity",
+                                            title: "@T("Admin.Catalog.Products.TierPrices.Fields.Quantity")",
+                                            format: "{0:0}"
+                                        }, {
+                                            field: "Price",
+                                            title: "@T("Admin.Catalog.Products.TierPrices.Fields.Price")"
+                                        }, {
+                                            field: "StartDateTimeUtc",
+                                            title: "@T("Admin.Catalog.Products.TierPrices.Fields.StartDateTimeUtc")",
+                                            type: "date",
+                                            format: "{0:G}"
+                                        }, {
+                                            field: "EndDateTimeUtc",
+                                            title: "@T("Admin.Catalog.Products.TierPrices.Fields.EndDateTimeUtc")",
+                                            type: "date",
+                                            format: "{0:G}"
+                                        }, {
+                                            field: "Id",
+                                            title: "@T("Admin.Common.Edit")",
+                                            headerAttributes: { style: "text-align:center" },
+                                            attributes: { style: "text-align:center" },
+                                            template: "<button onclick=\"javascript:OpenWindow('@Url.Content("~/Admin/Product/TierPriceEditPopup/")#=Id#?btnId=btnRefreshTierPrices&formId=product-form', 800, 600, true); return false;\" class='btn btn-default'><i class='fa fa-pencil'></i>@T("Admin.Common.Edit")</button>"
+                                        },{
+                                            command: { name: "destroy", text: "@T("Admin.Common.Delete")" },
+                                            title: "@T("Admin.Common.Delete")"
+                                        }
+                                    ]
                                 });
+                            });
                         </script>
                     </div>
                     <div class="panel-footer">
@@ -1127,22 +1125,22 @@
                         </button>
                         <input type="submit" id="btnRefreshTierPrices" style="display: none" />
                         <script type="text/javascript">
-                                $(document).ready(function() {
-                                    $('#btnRefreshTierPrices').click(function() {
-                                        $("#tierprices-grid").data('kendoGrid').dataSource.read();
-                                        //return false to don't reload a page
-                                        return false;
-                                    });
+                            $(document).ready(function() {
+                                $('#btnRefreshTierPrices').click(function() {
+                                    $("#tierprices-grid").data('kendoGrid').dataSource.read();
+                                    //return false to don't reload a page
+                                    return false;
                                 });
+                            });
                         </script>
                     </div>
-                    }
-                    else
-                    {
+                }
+                else
+                {
                     <div class="panel-body">
                         @T("Admin.Catalog.Products.TierPrices.SaveBeforeEdit")
                     </div>
-                    }
+                }
             </div>
         </div>
     </div>
@@ -1269,24 +1267,24 @@
                             });
                         </script>
                     </div>
-                        <div class="panel-footer">
-                            <button type="submit" id="btnAddNewAssociatedProduct" onclick="javascript:OpenWindow('@(Url.Action("AssociatedProductAddPopup", "Product", new {productId = Model.Id, btnId = "btnRefreshAssociatedProducts", formId = "product-form"}))', 800, 800, true); return false;" class="btn btn-primary">
-                                @T("Admin.Catalog.Products.AssociatedProducts.AddNew")
-                            </button>
-                            <input type="submit" id="btnRefreshAssociatedProducts" style="display: none" />
-                            <script type="text/javascript">
-                                $(document).ready(function() {
-                                    $('#btnRefreshAssociatedProducts').click(function() {
-                                        //refresh grid
-                                        var grid = $("#associatedproducts-grid").data('kendoGrid');
-                                        grid.dataSource.read();
+                    <div class="panel-footer">
+                        <button type="submit" id="btnAddNewAssociatedProduct" onclick="javascript:OpenWindow('@(Url.Action("AssociatedProductAddPopup", "Product", new {productId = Model.Id, btnId = "btnRefreshAssociatedProducts", formId = "product-form"}))', 800, 800, true); return false;" class="btn btn-primary">
+                            @T("Admin.Catalog.Products.AssociatedProducts.AddNew")
+                        </button>
+                        <input type="submit" id="btnRefreshAssociatedProducts" style="display: none" />
+                        <script type="text/javascript">
+                            $(document).ready(function() {
+                                $('#btnRefreshAssociatedProducts').click(function() {
+                                    //refresh grid
+                                    var grid = $("#associatedproducts-grid").data('kendoGrid');
+                                    grid.dataSource.read();
 
-                                        //return false to don't reload a page
-                                        return false;
-                                    });
+                                    //return false to don't reload a page
+                                    return false;
                                 });
-                            </script>
-                        </div>
+                            });
+                        </script>
+                    </div>
                 }
                 else
                 {
@@ -1394,9 +1392,9 @@
                                         }
                                     </tbody>
                                 </table>
-                                    <p>
-                                        <em>@T("Admin.Catalog.Products.ProductWarehouseInventory.Description1")</em>
-                                    </p>
+                                <p>
+                                    <em>@T("Admin.Catalog.Products.ProductWarehouseInventory.Description1")</em>
+                                </p>
                                     <p>
                                         <em>@T("Admin.Catalog.Products.ProductWarehouseInventory.Description2")</em>
                                     </p>
@@ -1517,56 +1515,56 @@
                             @Html.ValidationMessageFor(model => model.IsShipEnabled)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.Weight ? null : "advanced-setting")" id="pnlWeight">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.Weight ? null : "advanced-setting")" id="pnlWeight">
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.Weight, Model.BaseWeightIn)
                             @Html.NopLabelFor(model => model.Weight)
                             @Html.ValidationMessageFor(model => model.Weight)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.Dimensions ? null : "advanced-setting")" id="pnlLength">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.Dimensions ? null : "advanced-setting")" id="pnlLength">
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.Length, Model.BaseDimensionIn)
                             @Html.NopLabelFor(model => model.Length)
                             @Html.ValidationMessageFor(model => model.Length)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.Dimensions ? null : "advanced-setting")" id="pnlWidth">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.Dimensions ? null : "advanced-setting")" id="pnlWidth">
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.Width, Model.BaseDimensionIn)
                             @Html.NopLabelFor(model => model.Width)
                             @Html.ValidationMessageFor(model => model.Width)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.Dimensions ? null : "advanced-setting")" id="pnlHeight">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.Dimensions ? null : "advanced-setting")" id="pnlHeight">
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.Height, Model.BaseDimensionIn)
                             @Html.NopLabelFor(model => model.Height)
                             @Html.ValidationMessageFor(model => model.Height)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.FreeShipping ? null : "advanced-setting")" id="pnlFreeShipping">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.FreeShipping ? null : "advanced-setting")" id="pnlFreeShipping">
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.IsFreeShipping)
                             @Html.NopLabelFor(model => model.IsFreeShipping)
                             @Html.ValidationMessageFor(model => model.IsFreeShipping)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.ShipSeparately ? null : "advanced-setting")" id="pnlShipSeparately">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.ShipSeparately ? null : "advanced-setting")" id="pnlShipSeparately">
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.ShipSeparately)
                             @Html.NopLabelFor(model => model.ShipSeparately)
                             @Html.ValidationMessageFor(model => model.ShipSeparately)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.AdditionalShippingCharge ? null : "advanced-setting")" id="pnlAdditionalShippingCharge">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.AdditionalShippingCharge ? null : "advanced-setting")" id="pnlAdditionalShippingCharge">
                         <div class="@rightColumnClass">
                             @Html.NopEditorFor(model => model.AdditionalShippingCharge, Model.PrimaryStoreCurrencyCode)
                             @Html.NopLabelFor(model => model.AdditionalShippingCharge)
                             @Html.ValidationMessageFor(model => model.AdditionalShippingCharge)
                         </div>
                     </div>
-                    <div class="form-group @(Model.ProductEditorSettingsModel.DeliveryDate ? null : "advanced-setting")" id="pnlDeliveryDate">
+                    <div class="form-group nested-setting @(Model.ProductEditorSettingsModel.DeliveryDate ? null : "advanced-setting")" id="pnlDeliveryDate">
                         <div class="@rightColumnClass">
                             @Html.NopDropDownListFor(model => model.DeliveryDateId, Model.AvailableDeliveryDates)
                             @Html.NopLabelFor(model => model.DeliveryDateId)
@@ -1866,24 +1864,24 @@
                             });
                         </script>
                     </div>
-                        <div class="panel-footer">
-                            <button type="submit" id="btnAddNewRelatedProduct" class="btn btn-primary" onclick="javascript:OpenWindow('@(Url.Action("RelatedProductAddPopup", "Product", new {productId = Model.Id, btnId = "btnRefreshRelatedProducts", formId = "product-form"}))', 800, 800, true); return false;">
-                                @T("Admin.Catalog.Products.RelatedProducts.AddNew")
-                            </button>
-                            <input type="submit" id="btnRefreshRelatedProducts" style="display: none" />
-                            <script type="text/javascript">
-                                $(document).ready(function() {
-                                    $('#btnRefreshRelatedProducts').click(function() {
-                                        //refresh grid
-                                        var grid = $("#relatedproducts-grid").data('kendoGrid');
-                                        grid.dataSource.read();
+                    <div class="panel-footer">
+                        <button type="submit" id="btnAddNewRelatedProduct" class="btn btn-primary" onclick="javascript:OpenWindow('@(Url.Action("RelatedProductAddPopup", "Product", new {productId = Model.Id, btnId = "btnRefreshRelatedProducts", formId = "product-form"}))', 800, 800, true); return false;">
+                            @T("Admin.Catalog.Products.RelatedProducts.AddNew")
+                        </button>
+                        <input type="submit" id="btnRefreshRelatedProducts" style="display: none" />
+                        <script type="text/javascript">
+                            $(document).ready(function() {
+                                $('#btnRefreshRelatedProducts').click(function() {
+                                    //refresh grid
+                                    var grid = $("#relatedproducts-grid").data('kendoGrid');
+                                    grid.dataSource.read();
 
-                                        //return false to don't reload a page
-                                        return false;
-                                    });
+                                    //return false to don't reload a page
+                                    return false;
                                 });
-                            </script>
-                        </div>
+                            });
+                        </script>
+                    </div>
                 }
                 else
                 {
@@ -1971,24 +1969,24 @@
                             });
                         </script>
                     </div>
-                        <div class="panel-footer">
-                            <button type="submit" id="btnAddNewCrossSellProduct" onclick="javascript:OpenWindow('@(Url.Action("CrossSellProductAddPopup", "Product", new {productId = Model.Id, btnId = "btnRefreshCrossSellProducts", formId = "product-form"}))', 800, 800, true); return false;" class="btn btn-primary">
-                                @T("Admin.Catalog.Products.CrossSells.AddNew")
-                            </button>
-                            <input type="submit" id="btnRefreshCrossSellProducts" style="display: none" />
-                            <script type="text/javascript">
-                                $(document).ready(function() {
-                                    $('#btnRefreshCrossSellProducts').click(function() {
-                                        //refresh grid
-                                        var grid = $("#crosssellproducts-grid").data('kendoGrid');
-                                        grid.dataSource.read();
+                    <div class="panel-footer">
+                        <button type="submit" id="btnAddNewCrossSellProduct" onclick="javascript:OpenWindow('@(Url.Action("CrossSellProductAddPopup", "Product", new {productId = Model.Id, btnId = "btnRefreshCrossSellProducts", formId = "product-form"}))', 800, 800, true); return false;" class="btn btn-primary">
+                            @T("Admin.Catalog.Products.CrossSells.AddNew")
+                        </button>
+                        <input type="submit" id="btnRefreshCrossSellProducts" style="display: none" />
+                        <script type="text/javascript">
+                            $(document).ready(function() {
+                                $('#btnRefreshCrossSellProducts').click(function() {
+                                    //refresh grid
+                                    var grid = $("#crosssellproducts-grid").data('kendoGrid');
+                                    grid.dataSource.read();
 
-                                        //return false to don't reload a page
-                                        return false;
-                                    });
+                                    //return false to don't reload a page
+                                    return false;
                                 });
-                            </script>
-                        </div>
+                            });
+                        </script>
+                    </div>
                 }
                 else
                 {
