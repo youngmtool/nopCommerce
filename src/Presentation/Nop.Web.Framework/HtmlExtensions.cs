@@ -365,7 +365,7 @@ namespace Nop.Web.Framework
             builder.MergeAttribute("title", value);
             builder.MergeAttribute("class", "ico-help");
             var icon = new StringBuilder();
-            icon.Append("<i class='fa fa-question-circle'></i>");
+            icon.Append("<i class='fa fa-question'></i>");
             builder.InnerHtml = icon.ToString();
             //render tag
             return MvcHtmlString.Create(builder.ToString());

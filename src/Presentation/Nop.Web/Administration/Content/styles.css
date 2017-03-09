@@ -278,7 +278,7 @@ table.adminContent {
 .k-numeric-wrap.k-state-default {
     border-radius: 0;
     border: none;
-    height: 46px;
+    height: 50px;
     padding-right: 23px;
     background: #fff;
 }
@@ -300,9 +300,9 @@ table.adminContent {
 .k-picker-wrap.k-state-default > .k-select {
     background: #fff;
     border: 1px solid #d2d6de;
-    height: 44px;
-    line-height: 40px;
-    width: 4.6em;
+    height: 49px;
+    line-height: 48px;
+    width: 4.8em;
     padding-left: 1px;
     -moz-box-sizing: content-box;
 }
@@ -311,7 +311,7 @@ table.adminContent {
 }
 .k-picker-wrap .k-input,
 .k-numeric-wrap .k-input {
-    height: 38px;
+    height: 43px;
     border-radius: 0;
     border: 1px solid #d2d6de;
     text-indent: 0.7em;
@@ -455,7 +455,7 @@ td.k-state-focused.k-state-selected {
 }
 .k-multiselect-wrap {
     min-height: 34px;
-    padding-top: 10px;
+    padding-top: 15px;
 }
 .k-multiselect-wrap>.k-input {
     height: 28px;
@@ -767,24 +767,21 @@ td.k-state-focused.k-state-selected {
 }
 .form-horizontal .label-wrapper .control-label {
     padding-top: 0;
-    color: #0b6ea7;
     display: table-cell;
     vertical-align: middle;
     font-weight: 600;
     font-size: 14px;
 }
 .form-horizontal .label-wrapper .ico-help {
-    color: #adadad;
-    font-size: 1.1em;
-    margin-left: 6px;
-    margin-top: -1px;
-    padding-left: 6px;
+    color: #a9a9a9;
+    font-size: 11px;
+    padding-left: 5px;
     display: table-cell;
     vertical-align: middle;
 }
 .form-control {
     padding: 10px 12px;
-    height: 44px;
+    height: 50px;
 }
 .table .form-control{
     
@@ -798,7 +795,7 @@ textarea.form-control {
     margin-left: 18px;
     margin-right: 15px;
     display: table;
-    height: 44px;
+    height: 35px;
 }
 .form-control + .label-wrapper,
 .form-control + script + .label-wrapper,
@@ -808,9 +805,10 @@ textarea.form-control {
 .k-widget + script + .label-wrapper,
 textarea.form-control + .label-wrapper, 
 .mce-tinymce + textarea + .label-wrapper,
-ul.tag-editor + .label-wrapper {
+ul.tag-editor + .label-wrapper,
+.panel + .label-wrapper {
     background: #fff;
-    padding: 0 3px 0 5px;
+    padding: 0 5px;
     margin-left: 12px;
     position: absolute;
     z-index: 10;
@@ -834,20 +832,32 @@ ul.tag-editor:focus + .label-wrapper {
 .input-group + script + .label-wrapper,
 .k-widget + .label-wrapper,
 .k-widget + script + .label-wrapper {
-    margin-top: -54px;
+    margin-top: -65px;
 }
 textarea.form-control + .label-wrapper, 
 .mce-tinymce + textarea + .label-wrapper {
-    top: 0;
-    margin-top: -10px;
+    top: 0px;
+    margin-top: 5px;
 }
-ul.tag-editor + .label-wrapper{      
-    margin-top: -56px;    
+ul.tag-editor + .label-wrapper {
+    margin-top: -61px;
+}
+.panel + .label-wrapper {
+    margin-top: -134px;
 }
 input[type=checkbox] + .label-wrapper,
 input[type=checkbox] + input + .label-wrapper{margin-left: 5px;}
 .form-horizontal .label-wrapper i.fa {
-    width: 16px;
+    width: 15px;
+    height: 15px;
+    line-height: 15px;
+    border: 1px solid;
+    border-radius: 10px;
+    padding-right: 0 !important;
+    padding-left: 3px;
+    font-weight: 300;
+}
+.form-horizontal .label-wrapper i.fa:before {
 }
 .form-horizontal span.required {
     color: #ff2e2e;
@@ -857,13 +867,39 @@ input[type=checkbox] + input + .label-wrapper{margin-left: 5px;}
 }
 .form-group {
     margin-bottom: 0;
-    margin-top: 20px;
+    margin-top: 0;
     position: relative;
+}
+.form-group .panel{
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.panel .form-group > div > *:first-child {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.form-group > div > ul.tag-editor {
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+.form-group .mce-tinymce.mce-container {
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+.form-group > div > .label-wrapper:first-child {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .panel-body > .form-group:first-child {
     margin-top: 0;
 }
-.form-group input[type=checkbox] {float: left;margin-top: 16px;}
+.panel .form-group input[type=checkbox] {
+    float: left;
+    margin-top: 11px;
+    background: #fff;
+    z-index: 10;
+    position: relative;
+}
 .form-group .checkbox input[type=checkbox] {
     margin-top: 3px;
 }
@@ -907,7 +943,7 @@ input[type=checkbox] + input + .label-wrapper{margin-left: 5px;}
     max-width: 100%;
     border-radius: 0;
     border-color: #d2d6de;
-    height: 46px;
+    height: 50px;
 }
 .k-grid-edit-row>td>.k-numerictextbox {
     width: 100% !important;
@@ -929,7 +965,7 @@ input[type=checkbox] + input + .label-wrapper{margin-left: 5px;}
 }
 .form-text-row {
     float: left;
-    height: 44px;
+    height: 34px;
     display: table;
 }
 .form-text-row > span {
@@ -1030,7 +1066,7 @@ input[type=file].form-control {
 }
 .panel-group .panel-default {
     border: none;
-    border: 1px dashed #ccc;
+    border: 1px solid #e3e3e3;
     /* background: #f9f9f9; */
     border-radius: 0;
 }
@@ -1285,18 +1321,38 @@ span.grid-report-item.red {
 }
 
 /*nested setting*/
-.form-group + .nested-setting {    
-    padding-left: 20px;    
+.form-group + .nested-setting {
+    padding-left: 20px;
+    position: relative;
 }
 .form-group + .nested-setting:before {
-    border-left: 1px dashed #8a8a8a;
-    border-bottom: 1px dashed #8a8a8a;
+    border-left: 1px solid #b5b5b5;
     content: "";
     position: absolute;
     width: 16px;
-    height: 62px;
+    height: 100%;
     display: block;
-    margin-top: -40px;
+    margin-top: -18px;
+    margin-left: -15px;
+    z-index: 5;
+}
+.nested-setting > .form-group:before {
+    
+border-bottom: 1px solid #b5b5b5;
+    
+content: "";
+    
+position: absolute;
+    
+width: 16px;
+    
+height: 100%;
+    
+display: block;
+    
+margin-top: -17px;
+    
+z-index: 5;
 }
 
 /*bootstrap touchspin*/
@@ -1322,14 +1378,14 @@ span.grid-report-item.red {
     border-color: #d2d6de;
     border-radius: 0;
     padding: 0 10px;
-    height: 23px;
+    height: 26px;
 }
 .bootstrap-touchspin .input-group-btn-vertical>.btn:hover {
     border-color: #afafaf;
 }
 .bootstrap-touchspin .input-group-btn-vertical .bootstrap-touchspin-down {
    margin-top: -1px;
-   height: 22px;
+   height: 25px;
 }
 
 /* THROBBER */
