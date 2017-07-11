@@ -36,7 +36,7 @@
                     <div class="form-fields">
                         <div class="basic-search">
                             <div class="inputs">
-                                <label asp-for="q">@T("Search.SearchTerm"):</label>
+                                <label asp-for="q" asp-postfix=":"></label>
                                 <input asp-for="q" class="search-text"/>
                             </div>
                             @await Component.InvokeAsync("Widget", new {widgetZone = "productsearch_page_basic"})
@@ -49,25 +49,25 @@
                             @if (Model.AvailableCategories.Count > 0)
                             {
                                 <div class="inputs">
-                                    <label asp-for="cid">@T("Search.Category"):</label>
+                                    <label asp-for="cid" asp-postfix=":"></label>
                                     <select asp-for="cid" asp-items="Model.AvailableCategories"></select>
                                 </div>
                                 <div class="inputs reversed">
                                     <input asp-for="isc"/>
-                                    <label asp-for="isc">@T("Search.IncludeSubCategories")</label>
+                                    <label asp-for="isc"></label>
                                 </div>
                             }
                             @if (Model.AvailableManufacturers.Count > 0)
                             {
                                 <div class="inputs">
-                                    <label asp-for="mid">@T("Search.Manufacturer"):</label>
+                                    <label asp-for="mid" asp-postfix=":"></label>
                                     <select asp-for="mid" asp-items="Model.AvailableManufacturers"></select>
                                 </div>
                             }
                             @if (Model.asv && Model.AvailableVendors.Count > 0)
                             {
                                 <div class="inputs">
-                                    <label asp-for="vid">@T("Search.Vendor"):</label>
+                                    <label asp-for="vid" asp-postfix=":"></label>
                                     <select asp-for="vid" asp-items="Model.AvailableVendors"></select>
                                 </div>
                             }
