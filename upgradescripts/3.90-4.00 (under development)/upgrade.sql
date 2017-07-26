@@ -49,7 +49,13 @@ set @resources='
   </LocaleResource>
   <LocaleResource Name="Admin.ContentManagement.MessageTemplates.Description.Customer.EmailValidationMessage">
 	  <Value>This message template is used when Configuration - Settings - Customer settings - "Registration method" dropdownlist is set to "Email validation". The customer receives a message to confirm an email address used when registering.</Value>
-  </LocaleResource> 
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Shipping.UPS.Fields.AccountNumber">
+    <Value>Account number</Value>
+  </LocaleResource>
+  <LocaleResource Name="Plugins.Shipping.UPS.Fields.AccountNumber.Hint">
+    <Value>Specify UPS account number (required to get negotiated rates).</Value>
+  </LocaleResource>
 </Language>
 '
 
